@@ -1,0 +1,13 @@
+[
+	{
+		"name":     "deku_tree_lobby",
+		"class":    "interior",
+		"exits":    [ "deku_tree_child", "deku_tree_b1" ],
+		"comment":  "deku tree child represents the area of the deku tree as visited by child"
+	},
+	{
+		"name": "deku_tree_b1",
+		"class": "interior",
+		"exits": [ "deku_tree_lobby", "deku_tree_b2" ]
+	}
+]

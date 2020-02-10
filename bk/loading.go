@@ -9,10 +9,10 @@ import (
 
 //helper struct to assist tests
 type Pools struct {
-	Items []*Key
-	Flags []*Key
-
-	Nodes []*Node
+	Items    []*Key
+	Flags    []*Key
+	Nodes    []*Node
+	DekuTree []*Node
 }
 
 //LoadBasePools pulls the pools from the containing game's folder. At this time, only oot
@@ -22,6 +22,7 @@ func LoadBasePools(wd string) (kg Pools) {
 	kg.Items = LoadKeyPool(wd + "item_pool.json")
 	kg.Flags = LoadKeyPool(wd + "state_flags.json")
 	kg.Nodes = LoadNodes(wd + "nodes.json")
+	kg.DekuTree = LoadNodes(wd + "deku_tree.json")
 
 	return
 }

@@ -23,8 +23,9 @@
 		"name":     "miku_deku_tree_check",
 		"class":    "one_way_portal",
 		"requires": [ "child", "kokiri_sword", "deku_shield" ],
-		"comment":  "when this self-destructs, kokiri_forest should instead point to the single exit in this list",
+		"comment":  "when this self-destructs, kokiri_forest should instead point to the single exit",
 		"on_visit": {
+			"gives":          [ "deku_sticks" ],
 			"self_destructs": true
 		},
 		"exits":    [ "deku_tree_child" ]
@@ -34,7 +35,13 @@
 		"class":    "two_way_portal",
 		"requires": [ "child", "miku_deku_tree" ],
 		"exits":    [ "kokiri_forest", "deku_tree_lobby" ],
-		"comment":  "deku tree child is "
+		"comment":  "deku tree child represents the area of the deku tree as visited by child"
+	},
+	{
+		"name":     "deku_tree_adult",
+		"class":    "two_way_portal",
+		"requires": [ "adult" ],
+		"exits":    [ "kokiri_forest" ]
 	},
 	{
 		"name":     "lost_woods",
