@@ -1,29 +1,37 @@
 [
 	{
-		"name":     "documentation",
-		"type":     "documentation",
-		"comment":  "OnGive of a toggle means that the key of the existing toggle will change from one to the other",
+		"name":    "documentation",
+		"type":    "documentation",
+		"comment": "OnGive of a toggle means that the key of the existing toggle will change from one to the other"
 	},
 	{
 		"name":    "age_toggle",
 		"type":    "toggle",
 		"comment": "OnGive or OnUse of this key, it gets the current state and then swaps it around",
-		"gives": [ "child", "adult" ]
+		"gives":   [ "child", "adult" ]
 	},
 	{
-		"name": "child",
-		"comment": "NEVER given directly. Only given from age_toggle"
-	},
-	{
-		"name": "adult",
-		"comment": "NEVER given directly. Only given from age_toggle"
-	},
-	{
-		"name":    "day_time",
-		"type":    "toggle",
-		"comment": "For the purposes of this naive logic, being able to dampe grave means reaching to toggle day_time via song",
+		"name":     "day_time",
+		"type":     "toggle",
+		"comment":  "For the purposes of this naive logic, being able to dampe grave means reaching to toggle day_time via song",
 		"comment2": "Gold Skulltula logic might only require night, doesn't care how you get there.",
 		"comment3": "OnGive or OnUse of this key changes time for night.",
-		"gives": [ "day", "night" ]
+		"gives":    [ "day", "night" ]
+	},
+	{
+		"name":    "child",
+		"comment": "NEVER given directly. Only given from age_toggle"
+	},
+	{
+		"name":    "adult",
+		"comment": "NEVER given directly. Only given from age_toggle"
+	},
+	{
+		"name":    "day",
+		"comment": "May be given directly"
+	},
+	{
+		"name":    "night",
+		"comment": "May be given directly"
 	}
 ]

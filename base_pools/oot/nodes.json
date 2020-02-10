@@ -20,18 +20,21 @@
 		]
 	},
 	{
-		"name": "miku_deku_tree_check",
-		"class": "one_way_portal",
+		"name":     "miku_deku_tree_check",
+		"class":    "one_way_portal",
 		"requires": [ "child", "kokiri_sword", "deku_shield" ],
-		"comment": "assumes the algorithm can never lose deku shield",
-		"exits": [ "deku_tree_child" ]
+		"comment":  "when this self-destructs, kokiri_forest should instead point to the single exit in this list",
+		"on_visit": {
+			"self_destructs": true
+		},
+		"exits":    [ "deku_tree_child" ]
 	},
 	{
-		"name": "deku_tree_child",
-		"class": "two_way_portal",
+		"name":     "deku_tree_child",
+		"class":    "two_way_portal",
 		"requires": [ "child", "miku_deku_tree" ],
-		"exits": [ "kokiri_forest", "deku_tree_lobby" ],
-		"comment": "deku tree child is "
+		"exits":    [ "kokiri_forest", "deku_tree_lobby" ],
+		"comment":  "deku tree child is "
 	},
 	{
 		"name":     "lost_woods",
@@ -52,6 +55,7 @@
 	{
 		"name":     "kokiri_training_ground_chest",
 		"class":    "one_way_portal",
+		"comment":  "All Chests or nodes which cannot give more than one time, should self-destruct",
 		"requires": [ "child" ],
 		"on_visit": {
 			"gives":          [ "kokiri_sword" ],
@@ -60,10 +64,10 @@
 		"exits":    [ "kokiri_training_ground" ]
 	},
 	{
-		"name":      "kokiri_training_ground",
-		"comment": 	 "the only thing kokiri training ground provides is the sword chest",
-		"class":     "two_way_portal",
-		"requires":  [ "child" ],
-		"exits": [ "kokiri_forest", "kokiri_training_ground_chest" ]
+		"name":     "kokiri_training_ground",
+		"comment":  "the only thing kokiri training ground provides is the sword chest",
+		"class":    "two_way_portal",
+		"requires": [ "child" ],
+		"exits":    [ "kokiri_forest", "kokiri_training_ground_chest" ]
 	}
 ]
