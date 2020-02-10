@@ -52,6 +52,8 @@ type (
 		Name       KeyName        // Name is the human-readable ID of this key.
 		Type       string         // Type is an extra descriptor for a key that can be added in lieu of listing all required items at once
 		Conditions []KeyCondition // Conditions is a list of requirements in order to use this item. Expexts a KeyName
+
+
 		State      struct {
 			Action     KeyAction // Action: What to do on use of this key
 			TeleportTo NodeName  // TeleportTo: Node to visit. Only valid if Action is teleport
