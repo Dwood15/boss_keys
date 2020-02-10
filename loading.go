@@ -17,11 +17,11 @@ type Pools struct {
 
 //LoadBasePools pulls the pools from the containing game's folder. At this time, only oot
 // is recognized, however others may be added in the future.
-func LoadBasePools() (kg Pools) {
+func LoadBasePools(wd string) (kg Pools) {
 	//sorry windows users :P
-	kg.Items = LoadKeyPool("base_pools/oot/item_pool.json")
-	kg.Flags = LoadKeyPool("base_pools/oot/state_flags.json")
-	kg.Nodes = LoadNodes("base_pools/oot/nodes.json")
+	kg.Items = LoadKeyPool(wd + "item_pool.json")
+	kg.Flags = LoadKeyPool(wd + "state_flags.json")
+	kg.Nodes = LoadNodes(wd + "nodes.json")
 
 	return
 }

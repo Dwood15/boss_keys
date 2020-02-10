@@ -24,10 +24,11 @@ const (
 	OneWayPortal NodeClass = "one_way_portal" // Blue Warps and Owl teleport
 	TwoWayPortal NodeClass = "two_way_portal" // Doors, keyed entrances
 	SingleGive   NodeClass = "single_give"    // Chests, GS, freestanding items
-	ToggleGive   NodeClass = "toggle_give"    // Child -> Adult, visa versa
+	Toggle       NodeClass = "toggle"         // Child -> Adult, visa versa
 	Hub          NodeClass = "hub"            // Hubs may contain items and exits
+	Interior     NodeClass = "interior"       // An interior has one exit. May contain multiple items
 
-	Give            Action = "give"              // A Give action indicates that the player will receive an item
+	Give            Action = "give_and_destruct" // A Give action indicates that the player will receive an item
 	Teleport        Action = "teleport"          // A Teleport Action says that the player should be teleported
 	GiveAndTeleport Action = "give_and_teleport" // Visiting this node means player is teleported AND given item(s)
 
@@ -41,10 +42,8 @@ type (
 		Name     NodeName  // Name is the human-readable identifier of the particular Node.
 		Class    NodeClass // Class is a descriptor of the node
 		Requires []KeyName // Names of the Items that are required in order to visit this node.
-		OnVisit  struct {
-			Action    Action
-			Gives     []KeyName //Gives is a list of Human-Readable items
-			Teleports []NodeName
+		OnVisit  *struct {
+			Gives         []KeyName //Gives is a list of Human-Readable items
 			SelfDestructs bool
 			//Whether or not this node self-destructs after visiting.
 		}
@@ -66,7 +65,7 @@ type (
 )
 
 //Validation helpers
-var AllNodeClasses = NodeClasses{OneWayPortal, TwoWayPortal, SingleGive, ToggleGive, Hub}
+var AllNodeClasses = NodeClasses{OneWayPortal, TwoWayPortal, SingleGive, Toggle, Hub, Interior}
 var AllActions = Actions{Give, Teleport, GiveAndTeleport}
 var AllKeyActions = KeyActions{OnUseDecrement, OnUseDoNothing, OnUseTeleport, ""}
 
@@ -154,28 +153,6 @@ func (k *Key) Validate() error {
 	return nil
 }
 
-func (n *Node) validateOnVisit() error {
-	oV := n.OnVisit
-
-	if !AllActions.Contains(string(oV.Action)) {
-		return fmt.Errorf("OnVisit invalid action type: [%s]", oV.Action)
-	}
-
-	if oV.Action == Give || oV.Action == GiveAndTeleport {
-		if len(oV.Gives) == 0 {
-			return fmt.Errorf("oV action: [%s] Gives item, but none were found in Gives list", oV.Action)
-		}
-	}
-
-	if oV.Action == Teleport || oV.Action == GiveAndTeleport {
-		if len(oV.Teleports) == 0 {
-			return fmt.Errorf("oV action: [%s] Teleports, but does not find any in Teleport list", oV.Action)
-		}
-	}
-
-	return nil
-}
-
 func (n *Node) Validate() error {
 	if len(n.Name) == 0 {
 		return fmt.Errorf("node has no name. cannot use for tree traversal")
@@ -192,19 +169,19 @@ func (n *Node) Validate() error {
 		if len(n.OnVisit.Gives) != 1 {
 			return fmt.Errorf("node [%s] doesn't have correct number of Gives for class: [%s]", n.Name, n.Class)
 		}
-	case ToggleGive:
+	case Toggle:
 		panic("not implemented yet!")
 	case TwoWayPortal:
-		if len(n.OnVisit.Teleports) != 2 {
-			return fmt.Errorf("node [%s] doesn't have correct number of teleports for class of: [%s]", n.Name, n.Class)
+		if len(n.Exits) != 2 {
+			return fmt.Errorf("node [%s] doesn't have correct number of Exits for class: [%s]", n.Name, n.Class)
 		}
 	case OneWayPortal:
-		if len(n.OnVisit.Teleports) != 1 {
-			return fmt.Errorf("node [%s] doesn't have correct number of teleports for class of: [%s]", n.Name, n.Class)
+		if len(n.Exits) != 1 {
+			return fmt.Errorf("node [%s] doesn't have correct number of Exits for class of: [%s]", n.Name, n.Class)
 		}
 	}
 
-	return n.validateOnVisit()
+	return nil
 }
 
 //Minor helper-funcs

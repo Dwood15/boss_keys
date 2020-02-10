@@ -7,5 +7,5 @@ import (
 )
 
 func TestLoadBasePools(t *testing.T) {
-	bk.LoadBasePools()
+	bk.LoadBasePools("../../base_pools/oot/")
 }
