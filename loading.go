@@ -15,7 +15,8 @@ type Pools struct {
 	Nodes []*Node
 }
 
-//LoadBasePools pulls the pools from
+//LoadBasePools pulls the pools from the containing game's folder. At this time, only oot
+// is recognized, however others may be added in the future.
 func LoadBasePools() (kg Pools) {
 	//sorry windows users :P
 	kg.Items = LoadKeyPool("base_pools/item_pool.json")
