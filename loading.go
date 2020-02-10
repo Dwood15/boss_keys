@@ -1,4 +1,4 @@
-package graphtraverse
+package bosskeys
 
 import (
 	"encoding/json"
@@ -19,9 +19,9 @@ type Pools struct {
 // is recognized, however others may be added in the future.
 func LoadBasePools() (kg Pools) {
 	//sorry windows users :P
-	kg.Items = LoadKeyPool("base_pools/item_pool.json")
-	kg.Flags = LoadKeyPool("base_pools/state_flags.json")
-	kg.Nodes = LoadNodes("base_pools/nodes.json")
+	kg.Items = LoadKeyPool("base_pools/oot/item_pool.json")
+	kg.Flags = LoadKeyPool("base_pools/oot/state_flags.json")
+	kg.Nodes = LoadNodes("base_pools/oot/nodes.json")
 
 	return
 }

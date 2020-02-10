@@ -1,4 +1,4 @@
-package graphtraverse
+package bosskeys
 
 import (
 	"fmt"

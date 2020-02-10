@@ -3,9 +3,9 @@ package vanilla_test
 import (
 	"testing"
 
-	"github.com/dwood15/mediaplayer/offtopic/graphtraverse"
+	bk "github.com/dwood15/bosskeys"
 )
 
 func TestLoadBasePools(t *testing.T) {
-	graphtraverse.LoadBasePools()
+	bk.LoadBasePools()
 }
