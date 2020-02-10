@@ -1,19 +1,21 @@
 [
 	{
-		"name": "documentation",
-		"type": "documentation",
-		"comment": "this is for a list of keys which toggle prerequisites to manage game state."
+		"name":     "documentation",
+		"type":     "documentation",
+		"comment":  "OnGive of a toggle means that the key of the existing toggle will change from one to the other",
+		"comment2": ""
 	},
 	{
-		"name": "miku_deku_tree",
-		"type": "area_unlock_flag",
-		"comment": "miku check - sword, shield required, child",
-		"comment2": "this is kinda awkward, because it only applies to getting to the deku tree, so we have to ",
-		"conditions": [ "kokiri_sword", "deku_shield" ]
+		"name":    "age_toggle",
+		"type":    "toggle",
+		"comment": "OnGive of this key, it gets the current state and then swaps it around",
+		"values": [ "child", "adult" ]
 	},
 	{
-		"name": "child",
-		"type": "age_flag",
-		"comment": "toggling between child and adult is hard to account for in logic."
+		"name":    "day_time",
+		"type":    "toggle",
+		"comment": "For the purposes of this naive logic, being able to dampe grave means reaching to toggle day_time via song",
+		"comment2": "Gold Skulltula logic might only require night, doesn't care how you get there.",
+		"values": [ "day", "night" ]
 	}
 ]

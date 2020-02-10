@@ -10,7 +10,7 @@
 		"comment": "Kokiri forest hub",
 		"exits":   [
 			"deku_tree_adult",
-			"deku_tree_child",
+			"miku_deku_tree_check",
 			"lw_bridge_from_kokiri_forest",
 			"lost_woods",
 			"kokiri_shop",
@@ -18,6 +18,20 @@
 			"kokiri_training_ground",
 			"links_house"
 		]
+	},
+	{
+		"name": "miku_deku_tree_check",
+		"class": "one_way_portal",
+		"requires": [ "child", "kokiri_sword", "deku_shield" ],
+		"comment": "assumes the algorithm can never lose deku shield",
+		"exits": [ "deku_tree_child" ]
+	},
+	{
+		"name": "deku_tree_child",
+		"class": "two_way_portal",
+		"requires": [ "child", "miku_deku_tree" ],
+		"exits": [ "kokiri_forest", "deku_tree_lobby" ],
+		"comment": "deku tree child is "
 	},
 	{
 		"name":     "lost_woods",
@@ -47,6 +61,7 @@
 	},
 	{
 		"name":      "kokiri_training_ground",
+		"comment": 	 "the only thing kokiri training ground provides is the sword chest",
 		"class":     "two_way_portal",
 		"requires":  [ "child" ],
 		"exits": [ "kokiri_forest", "kokiri_training_ground_chest" ]

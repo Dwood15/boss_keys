@@ -26,11 +26,8 @@ const (
 	SingleGive   NodeClass = "single_give"    // Chests, GS, freestanding items
 	Toggle       NodeClass = "toggle"         // Child -> Adult, visa versa
 	Hub          NodeClass = "hub"            // Hubs may contain items and exits
-	Interior     NodeClass = "interior"       // An interior has one exit. May contain multiple items
-
-	Give            Action = "give_and_destruct" // A Give action indicates that the player will receive an item
-	Teleport        Action = "teleport"          // A Teleport Action says that the player should be teleported
-	GiveAndTeleport Action = "give_and_teleport" // Visiting this node means player is teleported AND given item(s)
+	Special      NodeClass = "special"
+	Interior     NodeClass = "interior" // An interior has one exit. May contain multiple items
 
 	OnUseDoNothing KeyAction = "do_nothing"
 	OnUseDecrement KeyAction = "decrement"
@@ -41,11 +38,10 @@ type (
 	Node struct {
 		Name     NodeName  // Name is the human-readable identifier of the particular Node.
 		Class    NodeClass // Class is a descriptor of the node
-		Requires []KeyName // Names of the Items that are required in order to visit this node.
+		Requires []KeyName // Names of the Items/Flags that are required in order to visit this node.
 		OnVisit  *struct {
 			Gives         []KeyName //Gives is a list of Human-Readable items
-			SelfDestructs bool
-			//Whether or not this node self-destructs after visiting.
+			SelfDestructs bool      //Whether or not this node self-destructs after visiting and taking the associated item
 		}
 
 		Exits []string
@@ -65,8 +61,7 @@ type (
 )
 
 //Validation helpers
-var AllNodeClasses = NodeClasses{OneWayPortal, TwoWayPortal, SingleGive, Toggle, Hub, Interior}
-var AllActions = Actions{Give, Teleport, GiveAndTeleport}
+var AllNodeClasses = NodeClasses{OneWayPortal, TwoWayPortal, SingleGive, Toggle, Hub, Interior, Special}
 var AllKeyActions = KeyActions{OnUseDecrement, OnUseDoNothing, OnUseTeleport, ""}
 
 //Major helper funcs
