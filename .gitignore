@@ -18,3 +18,5 @@ data/
 config.json
 log.txt
 *.log
+
+bosskeys

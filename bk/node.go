@@ -1,4 +1,4 @@
-package bosskeys
+package bk
 
 import (
 	"fmt"

@@ -1,4 +1,4 @@
-package bosskeys
+package bk
 
 type (
 	//I have no idea what I'm doing here.. this isn't a graph, more like a pre-graph :V

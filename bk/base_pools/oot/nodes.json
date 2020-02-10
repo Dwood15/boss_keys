@@ -39,7 +39,7 @@
 	},
 	{
 		"name":     "deku_tree_adult",
-		"class":    "two_way_portal",
+		"class":    "one_way_portal",
 		"requires": [ "adult" ],
 		"exits":    [ "kokiri_forest" ]
 	},
