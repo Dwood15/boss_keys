@@ -21,7 +21,7 @@ func (otr OotRregion) ToNodeChunk() (nl []bk.Node) {
 	rNode.Class = bk.Hub
 
 	numNew := len(otr.Locations) + len(otr.Exits)
-	rNode.Exits = make([]string, numNew)
+	rNode.Exits = make([]bk.NodeName, numNew)
 	nl = make([]bk.Node, numNew)
 
 	//A Location is a loopback - it's only connected to the parent area, and once visited,
@@ -113,8 +113,24 @@ func loadRegions(filename string) (regs []*OotRregion) {
 
 func ConvertOOT(wd string) {
 	regs := loadRegions(wd + "overworld.json")
-	ns := make([]bk.Node, len(regs))
-
 	println("loaded :", len(regs), " regions. converting to nodes")
 
+	ns := make([]bk.Node, len(regs))
+	for _, r := range regs {
+		ns = append(ns, r.ToNodeChunk()...)
+	}
+
+	println("nodes completed and appended: ", len(ns), "total nodes now exist. dumping to file")
+
+	b, err := json.Marshal(ns)
+
+	if err != nil {
+		panic(err)
+	}
+
+	if err = ioutil.WriteFile("tmp_oot_nodes.json", b, 0644); err != nil {
+		panic(err)
+	}
+
+	println("dump complete!")
 }
