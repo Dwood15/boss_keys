@@ -1,9 +1,8 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/dwood15/bosskeys/bk"
+	"github.com/alecthomas/jsonschema"
 )
 
 func main() {
@@ -12,23 +11,8 @@ func main() {
 
 	bk.LoadBasePools("bk/base_pools/oot/")
 
-	println("Pools loaded. Edit deku_tree.json")
+	println("Dumping Json schema to file")
 
-	var input string
-	var exit bool
-	for !exit {
-		println("waiting for input:")
-		_, err := fmt.Scanln(&input)
+	jsonschema.Reflect(&TestUser{})
 
-		if err != nil {
-			println("wtf, this shouldn't happen. err: ", err.Error())
-			return
-		}
-
-		println("you entered: ", input)
-		if input == "x" {
-			println("exiting")
-			return
-		}
-	}
 }
