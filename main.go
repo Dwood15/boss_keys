@@ -1,7 +1,12 @@
 package main
 
 import (
+	"io/ioutil"
+
 	"github.com/dwood15/bosskeys/bk"
+
+	"encoding/json"
+
 	"github.com/alecthomas/jsonschema"
 )
 
@@ -13,6 +18,20 @@ func main() {
 
 	println("Dumping Json schema to file")
 
-	jsonschema.Reflect(&TestUser{})
 
+
+	s := jsonschema.Reflect(&[]bk.Node{})
+
+	b, err := json.MarshalIndent(s, "", "  ")
+
+	if err != nil {
+		panic(err)
+	}
+
+	err = ioutil.WriteFile("node_schema.jsonschema", b, 0644)
+	if err != nil {
+		panic(err)
+	}
+
+	println("node_schema json schema output")
 }

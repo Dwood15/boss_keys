@@ -21,8 +21,8 @@ func LoadBasePools(wd string) (kg Pools) {
 	//sorry windows users :P
 	kg.Items = LoadKeyPool(wd + "item_pool.json")
 	kg.Flags = LoadKeyPool(wd + "state_flags.json")
-	kg.Nodes = LoadNodes(wd + "nodes.json")
-	kg.DekuTree = LoadNodes(wd + "deku_tree.json")
+	kg.Nodes = LoadNodes(wd + "/nodes/nodes.json")
+	kg.DekuTree = LoadNodes(wd + "/nodes/deku_tree.json")
 
 	return
 }

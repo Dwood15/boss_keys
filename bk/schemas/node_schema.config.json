@@ -1,0 +1,63 @@
+{
+	"items": {
+		"$schema": "http://json-schema.org/draft-04/schema#",
+		"$ref": "#/definitions/Node"
+	},
+	"type": "array",
+	"definitions": {
+		"OnVisit": {
+			"properties": {
+				"gives": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"self_destructs": {
+					"type": "boolean"
+				}
+			},
+			"additionalProperties": false,
+			"type": "object"
+		},
+		"Node": {
+			"required": [
+				"name",
+				"class",
+				"exits"
+			],
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"comment": {
+					"type": "string"
+				},
+				"comment2": {
+					"type": "string"
+				},
+				"class": {
+					"type": "string"
+				},
+				"exits": {
+					"items": {
+						"type": "string"
+					},
+					"type": "array"
+				},
+				"requires": {
+					"items": {
+						"type": "string"
+					},
+					"type": "array"
+				},
+				"on_visit": {
+					"$schema": "http://json-schema.org/draft-04/schema#",
+					"$ref": "#/definitions/OnVisit"
+				}
+			},
+			"additionalProperties": false,
+			"type": "object"
+		}
+	}
+}
