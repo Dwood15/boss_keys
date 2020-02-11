@@ -3,7 +3,7 @@ package vanilla_test
 import (
 	"testing"
 
-	bk "github.com/dwood15/bosskeys"
+	"github.com/dwood15/bosskeys/bk"
 )
 
 func TestLoadBasePools(t *testing.T) {

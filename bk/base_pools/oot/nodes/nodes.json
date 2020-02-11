@@ -56,7 +56,9 @@
 		"name":    "kokiri_shop",
 		"class":   "interior",
 		"comment": "not captured here: literally anything else",
-		"gives":   [ "deku_shield", "deku_nuts" ],
+		"on_visit": {
+			"gives":   [ "deku_shield", "deku_nuts" ],
+		},
 		"exits":   [ "kokiri_forest" ]
 	},
 	{

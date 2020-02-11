@@ -23,6 +23,7 @@ type (
 const (
 	OneWayPortal NodeClass = "one_way_portal" // Blue Warps and Owl teleport
 	TwoWayPortal NodeClass = "two_way_portal" // Doors, keyed entrances
+	Puzzle		 NodeClass = "puzzle"
 	SingleGive   NodeClass = "single_give"    // Chests, GS, freestanding items
 	Toggle       NodeClass = "toggle"         // Child -> Adult, visa versa
 	Hub          NodeClass = "hub"            // Hubs may contain items and exits
@@ -53,7 +54,6 @@ type (
 		Type       string         // Type is an extra descriptor for a key that can be added in lieu of listing all required items at once
 		Conditions []KeyCondition // Conditions is a list of requirements in order to use this item. Expexts a KeyName
 
-
 		State      struct {
 			Action     KeyAction // Action: What to do on use of this key
 			TeleportTo NodeName  // TeleportTo: Node to visit. Only valid if Action is teleport
@@ -63,7 +63,7 @@ type (
 )
 
 //Validation helpers
-var AllNodeClasses = NodeClasses{OneWayPortal, TwoWayPortal, SingleGive, Toggle, Hub, Interior, Special}
+var AllNodeClasses = NodeClasses{OneWayPortal, TwoWayPortal, Puzzle, SingleGive, Toggle, Hub, Interior, Special}
 var AllKeyActions = KeyActions{OnUseDecrement, OnUseDoNothing, OnUseTeleport, ""}
 
 //Major helper funcs
