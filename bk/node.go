@@ -45,7 +45,7 @@ type (
 			SelfDestructs bool      //Whether or not this node self-destructs after visiting and taking the associated item
 		}
 
-		Exits []string
+		Exits []NodeName
 	}
 
 	// Key represents game state, or player save file state. Anything that can be used to indicate progression, really.
