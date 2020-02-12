@@ -40,12 +40,12 @@ func (otr OotRregion) ToNodeChunk(itemsByLoc *map[string]string) (nl []bk.Node) 
 			Class:    bk.OneWayPortal,
 			Comment:  "",
 			Requires: []bk.KeyName{bk.KeyName(v)},
-			Exits: []bk.NodeName{rNode.Name},
+			Exits:    []bk.NodeName{rNode.Name},
 		}
 
 		itmName, ok := (*itemsByLoc)[k]
 		if ok {
-			n.OnVisit.Gives = []bk.KeyName{  bk.KeyName(itmName) }
+			n.OnVisit.Gives = []bk.KeyName{bk.KeyName(itmName)}
 			n.OnVisit.SelfDestructs = true
 			delete(*itemsByLoc, itmName)
 		}
@@ -92,11 +92,13 @@ func mToLowerSnake(m map[string]string) map[string]string {
 	return newM
 }
 
-func loadRegions(wd string) (regs []*OotRregion) {
-	regionsList := []string{"overworld.json", "deku_tree.json", }
+var regFiles = []string{"overworld", "deku_tree", "botw", "dd_cavern", "fire", "forest", "ganon", "ice_cavern", "jj_belly", "shadow", "spirit", "training_grounds", "water"}
 
-	for _, v := range regionsList {
-		b, err := ioutil.ReadFile(wd + v)
+func loadRegions(wd string) (regs []*OotRregion) {
+
+	const ext = ".json"
+	for _, v := range regFiles {
+		b, err := ioutil.ReadFile(wd + v + ext)
 		if err != nil {
 			panic(err)
 		}
