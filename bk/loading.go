@@ -21,8 +21,8 @@ func LoadBasePools(wd string) (kg Pools) {
 	//sorry windows users :P
 	kg.Items = LoadKeyPool(wd + "item_pool.json")
 	kg.Flags = LoadKeyPool(wd + "state_flags.json")
-	kg.Nodes = LoadNodes(wd + "/nodes/nodes.json")
-	kg.DekuTree = LoadNodes(wd + "/nodes/deku_tree.json")
+	kg.Nodes = LoadNodes(wd + "nodes/nodes.json")
+	kg.DekuTree = LoadNodes(wd + "nodes/deku_tree.json")
 
 	return
 }
@@ -48,6 +48,23 @@ func LoadKeyPool(filename string) (keys []*Key) {
 	}
 
 	return
+}
+
+func LoadAndValidateNode(wd string) (errs []error) {
+	nl := LoadNodes(wd + "oot_nodes.json")
+
+	println("validating bk nodes. Num: ", len(nl))
+	errs = make([]error, 0, len(nl))
+
+	for _, n := range nl {
+		var err error
+		if err = n.Validate(); err != nil {
+			errs = append(errs, err)
+
+		}
+	}
+
+	return errs
 }
 
 func LoadNodes(filename string) (nl []*Node) {

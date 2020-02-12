@@ -23,10 +23,9 @@ type (
 const (
 	OneWayPortal NodeClass = "one_way_portal" // Blue Warps and Owl teleport
 	TwoWayPortal NodeClass = "two_way_portal" // Doors, keyed entrances
-	Puzzle		 NodeClass = "puzzle"
-	SingleGive   NodeClass = "single_give"    // Chests, GS, freestanding items
-	Toggle       NodeClass = "toggle"         // Child -> Adult, visa versa
-	Hub          NodeClass = "hub"            // Hubs may contain items and exits
+	Puzzle       NodeClass = "puzzle"
+	SingleGive   NodeClass = "single_give" // Chests, GS, freestanding items
+	Hub          NodeClass = "hub"         // Hubs may contain items and exits
 	Special      NodeClass = "special"
 	Interior     NodeClass = "interior" // An interior has one exit. May contain multiple items
 
@@ -36,8 +35,10 @@ const (
 )
 
 type (
-	Node struct {
-		Name     NodeName  // Name is the human-readable identifier of the particular Node.
+	NodeList []Node
+	Node     struct {
+		Name     NodeName // Name is the human-readable identifier of the particular Node.
+		Comment  string
 		Class    NodeClass // Class is a descriptor of the node
 		Requires []KeyName // Names of the Items/Flags that are required in order to visit this node.
 		OnVisit  *struct {
@@ -54,7 +55,7 @@ type (
 		Type       string         // Type is an extra descriptor for a key that can be added in lieu of listing all required items at once
 		Conditions []KeyCondition // Conditions is a list of requirements in order to use this item. Expexts a KeyName
 
-		State      struct {
+		State struct {
 			Action     KeyAction // Action: What to do on use of this key
 			TeleportTo NodeName  // TeleportTo: Node to visit. Only valid if Action is teleport
 			Value      int       // Value: the current number of this key in inventory
@@ -63,7 +64,7 @@ type (
 )
 
 //Validation helpers
-var AllNodeClasses = NodeClasses{OneWayPortal, TwoWayPortal, Puzzle, SingleGive, Toggle, Hub, Interior, Special}
+var AllNodeClasses = NodeClasses{OneWayPortal, TwoWayPortal, Puzzle, SingleGive, Hub, Interior, Special}
 var AllKeyActions = KeyActions{OnUseDecrement, OnUseDoNothing, OnUseTeleport, ""}
 
 //Major helper funcs
@@ -136,7 +137,7 @@ act:
 //Basic sanity checks
 func (k *Key) Validate() error {
 	if len(k.Name) == 0 {
-		return fmt.Errorf("all keys must have a name")
+		return fmt.Errorf("key missing name")
 	}
 
 	if !AllKeyActions.Contains(string(k.State.Action)) {
@@ -152,7 +153,7 @@ func (k *Key) Validate() error {
 
 func (n *Node) Validate() error {
 	if len(n.Name) == 0 {
-		return fmt.Errorf("node has no name. cannot use for tree traversal")
+		return fmt.Errorf("no name. cannot use for tree traversal")
 	}
 
 	if !AllNodeClasses.Contains(string(n.Class)) {
@@ -164,17 +165,15 @@ func (n *Node) Validate() error {
 	switch n.Class {
 	case SingleGive:
 		if len(n.OnVisit.Gives) != 1 {
-			return fmt.Errorf("node [%s] doesn't have correct number of Gives for class: [%s]", n.Name, n.Class)
+			return fmt.Errorf("[%s] doesn't have correct number of Gives for class: [%s]", n.Name, n.Class)
 		}
-	case Toggle:
-		panic("not implemented yet!")
 	case TwoWayPortal:
 		if len(n.Exits) != 2 {
-			return fmt.Errorf("node [%s] doesn't have correct number of Exits for class: [%s]", n.Name, n.Class)
+			return fmt.Errorf("[%s] doesn't have correct number of Exits for class: [%s]", n.Name, n.Class)
 		}
 	case OneWayPortal:
 		if len(n.Exits) != 1 {
-			return fmt.Errorf("node [%s] doesn't have correct number of Exits for class of: [%s]", n.Name, n.Class)
+			return fmt.Errorf("[%s] doesn't have correct number of Exits for class of: [%s]", n.Name, n.Class)
 		}
 	}
 

@@ -1,24 +1,21 @@
 package main
 
 import (
+	"encoding/json"
 	"io/ioutil"
 
-	"github.com/dwood15/bosskeys/bk"
-
-	"encoding/json"
-
 	"github.com/alecthomas/jsonschema"
+
+	"github.com/dwood15/bosskeys/bk"
+	"github.com/dwood15/bosskeys/compat"
 )
 
-func main() {
-	println("Launching interactive terminal for building json")
+func reflectSchemas() {
 	println("for starters, loading all of the pools.")
 
 	bk.LoadBasePools("bk/base_pools/oot/")
 
 	println("Dumping Json schema to file")
-
-
 
 	s := jsonschema.Reflect(&[]bk.Node{})
 
@@ -34,4 +31,11 @@ func main() {
 	}
 
 	println("node_schema json schema output")
+}
+
+func main() {
+	println("Launching interactive terminal for building json")
+
+	compat.ConvertOOTR("compat/oot_static/")
+
 }
