@@ -94,9 +94,10 @@ func mToLowerSnake(m map[string]string) map[string]string {
 
 var regFiles = []string{"overworld", "deku_tree", "botw", "dd_cavern", "fire", "forest", "ganon", "ice_cavern", "jj_belly", "shadow", "spirit", "training_grounds", "water"}
 
+const ext = ".json"
+
 func loadRegions(wd string) (regs []*OotRregion) {
 
-	const ext = ".json"
 	for _, v := range regFiles {
 		b, err := ioutil.ReadFile(wd + v + ext)
 		if err != nil {
@@ -125,24 +126,36 @@ func loadRegions(wd string) (regs []*OotRregion) {
 	return
 }
 
+var itemMaps = []string{"vanilla_location_items", "shop", "gs_tokens", "dungeon_items"}
+
 func loadItems(wd string) map[string]string {
-	var itms map[string]string
+	itms := make(map[string]string)
 	println("attempting to load all the items")
 
-	b, err := ioutil.ReadFile(wd + "vanilla_location_items.json")
-	if err != nil {
-		panic(err)
+	for _, fName := range itemMaps {
+		var tmp map[string]string
+
+		b, err := ioutil.ReadFile(wd + fName + ".json")
+		if err != nil {
+			panic(err)
+		}
+
+		if err = json.Unmarshal(b, &tmp); err != nil {
+			panic(err)
+		}
+
+		if len(tmp) == 0 {
+			panic("Loaded items locations map is empty!!")
+		}
+
+		for k, v := range tmp {
+			itms[toLowerSnake(k)] = toLowerSnake(v)
+		}
+
 	}
 
-	if err = json.Unmarshal(b, &itms); err != nil {
-		panic(err)
-	}
+	newItms := make(map[string]string)
 
-	if len(itms) == 0 {
-		panic("Loaded items locations map is empty!!")
-	}
-
-	newItms := make(map[string]string, len(itms))
 	for k, v := range itms {
 		newItms[toLowerSnake(k)] = toLowerSnake(v)
 	}
