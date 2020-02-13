@@ -12,6 +12,8 @@ type (
 	KeyCondition string //KeyCondition represents a requirement for using an item. A KeyCondition is either can_act, or the name of another key
 	KeyAction    string //KeyAction indicates what to do after use of the key
 
+	KeyPhrase string //KeyPhrase is a temporary typename used to indicate a conditional string which requires a parser to pluck conditional logic from
+
 	Action string //Action represents what to do when this node is visited
 
 	//helper collections to make searching through them easier
@@ -19,6 +21,12 @@ type (
 	Actions     []Action
 	KeyActions  []KeyAction
 )
+
+//ParseRequirements should implement the recursive-descent scanner.
+//It should return a KeyNodeList, a tree of items which reflect something similar to lisp syntax for conditionals
+func (kp KeyPhrase) ParseRequirements() {
+	panic("not yet implemented")
+}
 
 const (
 	OneWayPortal NodeClass = "one_way_portal" // Blue Warps and Owl teleport
@@ -40,7 +48,7 @@ type (
 		Name     NodeName // Name is the human-readable identifier of the particular Node.
 		Comment  string
 		Class    NodeClass // Class is a descriptor of the node
-		Requires []KeyName // Names of the Items/Flags that are required in order to visit this node.
+		Requires KeyPhrase // Names of the Items/Flags that are required in order to visit this node.
 		OnVisit  *struct {
 			Gives         []KeyName //Gives is a list of Human-Readable items
 			SelfDestructs bool      //Whether or not this node self-destructs after visiting and taking the associated item
@@ -63,6 +71,16 @@ type (
 	}
 )
 
+//NewNode is a hack for some mild awkwardness with embedded structs-to-pointers
+func NewNode() Node {
+	return Node{
+		OnVisit: &struct {
+			Gives         []KeyName
+			SelfDestructs bool
+		}{},
+	}
+}
+
 //Validation helpers
 var AllNodeClasses = NodeClasses{OneWayPortal, TwoWayPortal, Puzzle, SingleGive, Hub, Interior, Special}
 var AllKeyActions = KeyActions{OnUseDecrement, OnUseDoNothing, OnUseTeleport, ""}
@@ -71,26 +89,47 @@ var AllKeyActions = KeyActions{OnUseDecrement, OnUseDoNothing, OnUseTeleport, ""
 
 //CanVisit indicates whether or not we are able to access the next node and therefore claim a given item
 func (n *Node) CanVisit(from NodeName, keysHeld map[KeyName]Key) bool {
+
+	//Sanity checks. We panic because Programmer error means the local node is empty or missing things
+	if n == nil {
+		panic("can't check visit for nil nodes")
+	}
+
+	if len(n.Name) == 0 {
+		panic("invalid node Name - can't ")
+	}
+
+
+	//keysHeld check assumes that during testing, the algo has at least one key.
+	if len(keysHeld) == 0 {
+		panic("keys Held should not be empty!")
+	}
+
+	if len(from) == 0 {
+		panic("'from' node should never be emptystring")
+	}
+
 	if len(n.Requires) == 0 {
 		return true
 	}
 
-	//idea: return items which are missing?
+	//idea: return items which the algoshould think are missing?
 
-	for _, req := range n.Requires {
-		k, ok := keysHeld[req]
-		if !ok || len(k.Name) == 0 {
-			return false
-		}
+	n.Requires.ParseRequirements()
+	return false
 
-		if !k.Use(keysHeld) {
-			return false
-		}
-
-		//golang's funky about modifying members of a map...
-		//I'm a scrub so we reassign it back to the map
-		keysHeld[req] = k
-	}
+	//k, ok := keysHeld[n.Requires]
+	//if !ok || len(k.Name) == 0 {
+	//	return false
+	//}
+	//
+	//if !k.Use(keysHeld) {
+	//	return false
+	//}
+	//
+	////golang's funky about modifying members of a map...
+	////I'm a scrub so we reassign it back to the map
+	//keysHeld[req] = k
 
 	return true
 }

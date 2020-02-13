@@ -7,7 +7,7 @@ import (
 	"github.com/alecthomas/jsonschema"
 
 	"github.com/dwood15/bosskeys/bk"
-	"github.com/dwood15/bosskeys/compat"
+	"github.com/dwood15/bosskeys/compat/ootrcompat"
 )
 
 func reflectSchemas() {
@@ -36,6 +36,6 @@ func reflectSchemas() {
 func main() {
 	println("Launching interactive terminal for building json")
 
-	compat.ConvertOOTR("compat/oot_static/")
+	ootrcompat.ConvertOOTR("compat/ootrcompat/")
 
 }
