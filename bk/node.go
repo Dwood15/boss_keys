@@ -30,8 +30,6 @@ func (kp KeyPhrase) ParseRequirements() {
 
 const (
 	OneWayPortal NodeClass = "one_way_portal" // Blue Warps and Owl teleport
-	TwoWayPortal NodeClass = "two_way_portal" // Doors, keyed entrances
-	Puzzle       NodeClass = "puzzle"
 	SingleGive   NodeClass = "single_give" // Chests, GS, freestanding items
 	Hub          NodeClass = "hub"         // Hubs may contain items and exits
 	Special      NodeClass = "special"
@@ -43,18 +41,20 @@ const (
 )
 
 type (
+	OnVisit struct {
+		Gives         []KeyName `json:"gives,omitempty"`          //Gives is a list of Human-Readable items
+		SelfDestructs bool      `json:"self_destructs,omitempty"` //Whether or not this node self-destructs after visiting and taking the associated item
+	}
+
 	NodeList []Node
 	Node     struct {
-		Name     NodeName // Name is the human-readable identifier of the particular Node.
-		Comment  string
-		Class    NodeClass // Class is a descriptor of the node
-		Requires KeyPhrase // Names of the Items/Flags that are required in order to visit this node.
-		OnVisit  *struct {
-			Gives         []KeyName //Gives is a list of Human-Readable items
-			SelfDestructs bool      //Whether or not this node self-destructs after visiting and taking the associated item
-		}
+		Name     NodeName  `json:"name,omitempty"` // Name is the human-readable identifier of the particular Node.
+		Comment  string    `json:"comments,omitempty"`
+		Class    NodeClass `json:"class,omitempty"`    // Class is a descriptor of the node
+		Requires KeyPhrase `json:"requires,omitempty"` // Names of the Items/Flags that are required in order to visit this node.
+		OnVisit  *OnVisit  `json:"on_visit,omitempty"`
 
-		Exits []NodeName
+		Exits []NodeName `json:"exits,omitempty"`
 	}
 
 	// Key represents game state, or player save file state. Anything that can be used to indicate progression, really.
@@ -74,15 +74,12 @@ type (
 //NewNode is a hack for some mild awkwardness with embedded structs-to-pointers
 func NewNode() Node {
 	return Node{
-		OnVisit: &struct {
-			Gives         []KeyName
-			SelfDestructs bool
-		}{},
+		OnVisit: &OnVisit{},
 	}
 }
 
 //Validation helpers
-var AllNodeClasses = NodeClasses{OneWayPortal, TwoWayPortal, Puzzle, SingleGive, Hub, Interior, Special}
+var AllNodeClasses = NodeClasses{OneWayPortal, SingleGive, Hub, Interior, Special}
 var AllKeyActions = KeyActions{OnUseDecrement, OnUseDoNothing, OnUseTeleport, ""}
 
 //Major helper funcs
@@ -98,7 +95,6 @@ func (n *Node) CanVisit(from NodeName, keysHeld map[KeyName]Key) bool {
 	if len(n.Name) == 0 {
 		panic("invalid node Name - can't ")
 	}
-
 
 	//keysHeld check assumes that during testing, the algo has at least one key.
 	if len(keysHeld) == 0 {
@@ -206,9 +202,9 @@ func (n *Node) Validate() error {
 		if len(n.OnVisit.Gives) != 1 {
 			return fmt.Errorf("[%s] doesn't have correct number of Gives for class: [%s]", n.Name, n.Class)
 		}
-	case TwoWayPortal:
-		if len(n.Exits) != 2 {
-			return fmt.Errorf("[%s] doesn't have correct number of Exits for class: [%s]", n.Name, n.Class)
+	case Hub:
+		if len(n.Exits) == 0 {
+			return fmt.Errorf("[%s] doesn't have any Exits for class: [%s]", n.Name, n.Class)
 		}
 	case OneWayPortal:
 		if len(n.Exits) != 1 {

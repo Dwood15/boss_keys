@@ -131,11 +131,9 @@
 		"region_name": "Lost Woods",
 		"scene": "Lost Woods",
 		"hint": "the Lost Woods",
-		"events": {
-			"Odd Mushroom Access": "is_adult and ('Cojiro Access' or Cojiro)",
-			"Poachers Saw Access": "is_adult and 'Odd Potion Access'"
-		},
 		"locations": {
+			"Odd Mushroom Access": "is_adult and Cojiro",
+			"Poachers Saw Access": "is_adult and Odd Potion Access",
 			"Skull Kid": "is_child and can_play(Sarias_Song)",
 			"Ocarina Memory Game": "is_child and Ocarina",
 			"Target in Woods": "can_use(Slingshot)",
@@ -297,10 +295,8 @@
 	},
 	{
 		"region_name": "Lake Hylia Lab",
-		"events": {
-			"Eyedrops Access": "is_adult and ('Eyeball Frog Access' or (Eyeball_Frog and disable_trade_revert))"
-		},
 		"locations": {
+			"Eyedrops Access": "eyedrops",
 			"Diving in the Lab": "(Progressive_Scale, 2) or (logic_lab_diving and Iron_Boots and can_use(Hookshot))",
 			"GS Lab Underwater Crate": "Iron_Boots and can_use(Hookshot)"
 		},
@@ -366,10 +362,8 @@
 		"scene": "Gerudo Valley",
 		"hint": "Gerudo Valley",
 		"time_passes": true,
-		"events": {
-			"Broken Sword Access": "is_adult and ('Poachers Saw Access' or Poachers_Saw)"
-		},
 		"locations": {
+			"Broken Sword Access": "is_adult and Poachers_Saw",
 			"Gerudo Valley Hammer Rocks Chest": "can_use(Hammer)",
 			"GS Gerudo Valley Behind Tent": "can_use(Hookshot) and at_night",
 			"GS Gerudo Valley Pillar": "can_use(Hookshot) and at_night"
@@ -750,13 +744,11 @@
 		"region_name": "Kakariko Village",
 		"scene": "Kakariko Village",
 		"hint": "Kakariko Village",
-		"events": {
-			"Cojiro Access": "is_adult and 'Wake Up Adult Talon'",
-			"Kakariko Village Gate Open": "is_child and Zeldas_Letter"
-		},
 		"locations": {
-			"Sheik in Kakariko": "is_adult and Forest_Medallion and Fire_Medallion and Water_Medallion",
+			"Kakariko Village Gate Open": "is_child and Zeldas_Letter",
 			"Anju as Adult": "is_adult and at_day",
+			"Cojiro Access": "is_adult and Wake_Up_Adult_Talon",
+			"Sheik in Kakariko": "is_adult and Forest_Medallion and Fire_Medallion and Water_Medallion",
 			"Anjus Chickens": "is_child and at_day",
 			"GS Kakariko House Under Construction": "is_child and at_night",
 			"GS Kakariko Skulltula House": "is_child and at_night",
@@ -817,8 +809,9 @@
 	},
 	{
 		"region_name": "Carpenter Boss House",
-		"events": {
-			"Wake Up Adult Talon": "is_adult and (Pocket_Egg or Pocket_Cucco)"
+		"locations": {
+			"Pocket Cucco Access": "is_adult and Pocket_Egg",
+			"Wake Up Adult Talon": "is_adult and Pocket_Cucco"
 		},
 		"exits": {
 			"Kakariko Village": "True"
@@ -928,7 +921,7 @@
 	{
 		"region_name": "Odd Medicine Building",
 		"events": {
-			"Odd Potion Access": "is_adult and ('Odd Mushroom Access' or (Odd_Mushroom and disable_trade_revert))"
+			"Odd Potion Access": "is_adult and (Odd_Mushroom and disable_trade_revert)"
 		},
 		"exits": {
 			"Kakariko Village Backyard": "True"
@@ -1053,11 +1046,10 @@
 		"scene": "Death Mountain",
 		"hint": "Death Mountain Trail",
 		"time_passes": true,
-		"events": {
-			"Prescription Access": "is_adult and ('Broken Sword Access' or Broken_Sword)"
-		},
 		"locations": {
-			"Biggoron": "is_adult and (Claim_Check or (guarantee_trade_path and ('Eyedrops Access' or (Eyedrops and disable_trade_revert))))",
+			"Prescription Access": "is_adult and Broken_Sword",
+			"Claim Check Access": "is_adult and (Claim_Check or (guarantee_trade_path and ('Eyedrops Access' or (Eyedrops and disable_trade_revert))))",
+			"Biggoron": "is_adult and Claim Check Access",
 			"GS Mountain Trail Path to Crater": "is_adult and (can_use(Hammer) or logic_trail_gs_upper) and at_night",
 			"Death Mountain Trail Gossip Stone": "True",
 			"Gossip Stone Fairy": "can_summon_gossip_fairy and has_bottle",
@@ -1328,15 +1320,12 @@
 		"region_name": "Zoras Domain",
 		"scene": "Zoras Domain",
 		"hint": "Zora's Domain",
-		"events": {
-			"Zora Thawed": "is_adult and Blue_Fire",
-			"Eyeball Frog Access": "is_adult and 'Zora Thawed' and (Eyedrops or Eyeball_Frog or Prescription or 'Prescription Access')"
-		},
 		"locations": {
+			"Eyeball Frog Access": "is_adult and 'Zora Thawed' and (Eyedrops or Eyeball_Frog or Prescription)",
 			"Diving Minigame": "is_child",
 			"Zoras Domain Torch Run": "can_use(Sticks)",
 			"Deliver Ruto's Letter": "is_child and Bottle_with_Letter and zora_fountain != 'open'",
-			"King Zora Thawed": "'Zora Thawed'",
+			"King Zora Thawed": "is_adult and Blue_Fire",
 			"GS Zora's Domain Frozen Waterfall": "is_adult and at_night and (Progressive_Hookshot or Bow or Magic_Meter)",
 			"Zoras Domain Gossip Stone": "True",
 			"Gossip Stone Fairy": "can_summon_gossip_fairy_without_suns and has_bottle",
@@ -1518,8 +1507,8 @@
 	{
 		"region_name": "Deku Theater",
 		"locations": {
-			"Deku Theater Skull Mask": "is_child and 'Skull Mask'",
-			"Deku Theater Mask of Truth": "is_child and 'Mask of Truth'"
+			"Deku Theater Skull Mask": "is_child and Skull_Mask",
+			"Deku Theater Mask of Truth": "is_child and Mask_of_Truth"
 		},
 		"exits": {
 			"Lost Woods Beyond Mido": "True"
