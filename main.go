@@ -36,6 +36,12 @@ func reflectSchemas() {
 func main() {
 	println("Launching interactive terminal for building json")
 
+	//shouldn't be necessary any more?
 	ootrcompat.ConvertOOTR("compat/ootrcompat/")
 
+	//errs := bk.LoadAndValidateNodes("bk/base_pools/oot/")
+	//
+	//for _, err := range errs {
+	//	println(err.Error())
+	//}
 }

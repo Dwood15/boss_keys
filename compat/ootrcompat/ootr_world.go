@@ -30,26 +30,62 @@ func ConvertOOTR(wd string) {
 	regs := loadRegions(wd + "areas/")
 	println("loaded: [", len(regs), "] regions. converting to nodes")
 
-	ns := make([]bk.Node, 0, len(regs))
-	//ns := make(map[bk.NodeName]bk.Node, len(regs))
+	nL := make([]bk.Node, 0, len(regs))
+	ns := make(map[bk.NodeName]int, len(regs))
 
 	for _, r := range regs {
-		nodes := r.ToNodeChunk(itms)
-		for _, n := range nodes {
-			ns = append(ns, n)
+		for _, n := range r.ToNodeChunk(itms) {
+			var _n bk.Node
+			_ni, ok := ns[n.Name]
+			if !ok {
+				ns[n.Name] = len(nL)
+				nL = append(nL, n)
+				continue
+			}
 
-			//_n, ok :=  ns[n.Name]
-			//if !ok {
-			//	continue
-			//}
-			//
-			//if len(n.Exits) > 0 {
-			//	_n.Exits = append(_n.Exits, n.Exits...)
-			//}
-			//
-			//if n.Requires != _n.Requires {
-			//	println("for node: [" + n.Name + "] requires dont match")
-			//}
+			_n = nL[_ni]
+
+			//The algorithm for building locations is busted, and I'm
+			//to hcking lazy to fix the root cause, so this hack will forever burden me.
+			if n.OnVisit == nil && _n.OnVisit != nil {
+				n.OnVisit = _n.OnVisit
+			} else if n.OnVisit != nil && _n.OnVisit != nil {
+				if len(n.OnVisit.Gives) == 0 {
+					n.OnVisit.Gives = _n.OnVisit.Gives
+				} else if len(_n.OnVisit.Gives) != 0 {
+					n.OnVisit.Gives = append(n.OnVisit.Gives, _n.OnVisit.Gives...)
+				}
+			}
+
+			if len(_n.Exits) > 0 && len(n.Exits) == 0 {
+				n.Exits = _n.Exits
+				goto checkReq
+			}
+
+			if len(_n.Exits) > 0 {
+				for _, _nE := range _n.Exits {
+					var exists bool
+
+					for _, nE := range n.Exits {
+						if nE == _nE {
+							exists = true
+						}
+					}
+
+					//no duplicate exits
+					if !exists {
+						n.Exits = append(n.Exits, _nE)
+					}
+				}
+
+			}
+
+		checkReq:
+			if len(n.Requires) == 0 {
+				n.Requires = _n.Requires
+			}
+
+			nL[_ni] = n
 		}
 	}
 
@@ -62,9 +98,9 @@ func ConvertOOTR(wd string) {
 		}
 	}
 
-	println("nodes completed and appended: ", len(ns), "total nodes now exist. dumping to file")
+	println("nodes completed and appended: ", len(nL), "total nodes now exist. dumping to file")
 
-	b, err := json.MarshalIndent(ns, "", "  ")
+	b, err := json.MarshalIndent(nL, "", "  ")
 
 	if err != nil {
 		panic(err)

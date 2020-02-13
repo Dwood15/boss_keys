@@ -2,18 +2,21 @@ package bk
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 )
 
 //fixture files - edit these
 
 //helper struct to assist tests
-type Pools struct {
-	Items    []*Key
-	Flags    []*Key
-	Nodes    []*Node
-	DekuTree []*Node
-}
+type (
+	Pools struct {
+		Items       []*Key
+		Flags       []*Key
+		Nodes       []*Node
+		NodesByName map[NodeName]*Node
+	}
+)
 
 //LoadBasePools pulls the pools from the containing game's folder. At this time, only oot
 // is recognized, however others may be added in the future.
@@ -21,9 +24,9 @@ func LoadBasePools(wd string) (kg Pools) {
 	//sorry windows users :P
 	kg.Items = LoadKeyPool(wd + "item_pool.json")
 	kg.Flags = LoadKeyPool(wd + "state_flags.json")
-	kg.Nodes = LoadNodes(wd + "nodes/nodes.json")
-	kg.DekuTree = LoadNodes(wd + "nodes/deku_tree.json")
-
+	//Just one ginormous json file -- rip.
+	kg.Nodes = LoadNodes(wd + "nodes.json")
+	kg.NodesByName = make(map[NodeName]*Node, len(kg.Nodes))
 	return
 }
 
@@ -50,17 +53,24 @@ func LoadKeyPool(filename string) (keys []*Key) {
 	return
 }
 
-func LoadAndValidateNode(wd string) (errs []error) {
-	nl := LoadNodes(wd + "oot_nodes.json")
+func LoadAndValidateNodes(wd string) (errs []error) {
+	kg := LoadBasePools(wd)
+	nl := kg.Nodes
 
 	println("validating bk nodes. Num: ", len(nl))
 	errs = make([]error, 0, len(nl))
 
-	for _, n := range nl {
+	for i, n := range nl {
 		var err error
+		//Check that the internal data is coherent
 		if err = n.Validate(); err != nil {
-			errs = append(errs, err)
-
+			errs = append(errs, fmt.Errorf("Node Idx: [%d], err: [%s]", i, err.Error()))
+			continue
+		}
+		//Check that there is only one region of any given name
+		_, ok := kg.NodesByName[n.Name]
+		if ok {
+			errs = append(errs, fmt.Errorf("Node Idx: [%d], err: [%s] already exists", n.Name))
 		}
 	}
 
