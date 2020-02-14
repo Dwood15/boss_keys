@@ -56,7 +56,7 @@
 		"dungeon": "Ganons Castle",
 		"locations": {
 			"Ganons Castle Shadow Trial First Chest": "can_use(Fire_Arrows) or Progressive_Hookshot or Hover_Boots or can_play(Song_of_Time)",
-			"Ganons Castle Shadow Trial Second Chest": "can_use(Fire_Arrows) or (can_use(Longshot) and (Hover_Boots or can_use(Dins_Fire)))"
+			"Ganons Castle Shadow Trial Second Chest": "can_use(Fire_Arrows) or (can_use(Longshot) and (Hover_Boots or can_use(Dins_Fire)))",
 			"Cleared Shadow Trial": "can_use(Light_Arrows) and Hammer and ((Fire_Arrows and can_see_with_lens) or (can_use(Longshot) and (Hover_Boots or (Dins_Fire and can_see_with_lens))))"
 		}
 	},
@@ -74,7 +74,7 @@
 		"region_name": "Ganons Castle Light Trial",
 		"dungeon": "Ganons Castle",
 		"locations": {
-			"Cleared Light Trial": "can_use(Light_Arrows) and Progressive_Hookshot and (Small_Key_Ganons_Castle, 2) and can_see_with_lens"
+			"Cleared Light Trial": "can_use(Light_Arrows) and Progressive_Hookshot and (Small_Key_Ganons_Castle, 2) and can_see_with_lens",
 			"Ganons Castle Light Trial First Left Chest": "True",
 			"Ganons Castle Light Trial Second Left Chest": "True",
 			"Ganons Castle Light Trial Third Left Chest": "True",

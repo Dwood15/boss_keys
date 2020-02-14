@@ -22,6 +22,7 @@ func loadRegions(wd string) (regs []*OotRregion) {
 
 		var rL []*OotRregion
 		if err = json.Unmarshal(b, &rL); err != nil {
+			println("error on file: ", v)
 			panic(err)
 		}
 
