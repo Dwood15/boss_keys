@@ -11,6 +11,7 @@ import (
 var regFiles = []string{"overworld", "deku_tree", "botw", "dd_cavern", "fire", "forest", "ganon", "ice_cavern", "jj_belly", "shadow", "spirit", "training_grounds", "water"}
 
 const ext = ".json"
+const calculateCows = false
 
 func loadRegions(wd string) (regs []*OotRregion) {
 	for _, v := range regFiles {
@@ -37,13 +38,15 @@ func loadRegions(wd string) (regs []*OotRregion) {
 
 	//Pre-Sanitizing
 	for _, r := range regs {
-		for k := range r.Locations {
-			if string(k) == "Impas House Near Cow" {
-				continue
-			}
+		if calculateCows {
+			for k := range r.Locations {
+				if string(k) == "Impas House Near Cow" {
+					continue
+				}
 
-			if strings.Contains(string(k), "Cow") {
-				cows[k] = "Milk"
+				if strings.Contains(string(k), "Cow") {
+					cows[k] = "Milk"
+				}
 			}
 		}
 
