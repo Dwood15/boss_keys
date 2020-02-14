@@ -14,6 +14,8 @@ type OotRRequirement string
 type OotRLocations map[bk.NodeName]OotRRequirement
 type OotRregion struct {
 	RegionName string `json:"region_name"`
+	Scene      string `json:"scene,omitempty"`
+	Hint       string `json:"hint,omitempty"`
 	Locations  OotRLocations
 	Exits      OotRLocations
 }
@@ -115,7 +117,6 @@ func ConvertOOTR(wd string) {
 
 //bad func sig yes I know, leave me alone (. __ .)
 func locationToNode(iBL OoTRItems, rnName, k bk.NodeName, req OotRRequirement, c bk.NodeClass) bk.Node {
-
 	n := bk.NewNode()
 
 	n.Name = k
@@ -144,7 +145,7 @@ func locationToNode(iBL OoTRItems, rnName, k bk.NodeName, req OotRRequirement, c
 	return n
 }
 
-func (otr OotRregion) ToNodeChunk(itemsByLoc OoTRItems) (nl []bk.Node) {
+func (otr *OotRregion) ToNodeChunk(itemsByLoc OoTRItems) (nl []bk.Node) {
 	//A region is a node of class hub
 	var rNode bk.Node
 	rNode.Name = bk.NodeName(otr.RegionName)

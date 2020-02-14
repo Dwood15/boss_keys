@@ -25,9 +25,6 @@
 		"region_name": "Kokiri Forest",
 		"scene": "Kokiri Forest",
 		"hint": "Kokiri Forest",
-		"events": {
-			"Showed Mido Sword & Shield": "open_forest == 'open' or (is_child and Kokiri_Sword and Buy_Deku_Shield)"
-		},
 		"locations": {
 			"Kokiri Sword Chest": "is_child",
 			"GS Kokiri Know It All House": "is_child and can_child_attack and at_night and (had_night_start or can_leave_forest or can_play(Suns_Song))",
@@ -35,7 +32,8 @@
 			"GS Kokiri House of Twins": "is_adult and at_night and (can_use(Hookshot) or (logic_adult_kokiri_gs and can_use(Hover_Boots)))",
 			"Kokiri Forest Gossip Stone": "True",
 			"Gossip Stone Fairy": "can_summon_gossip_fairy_without_suns and has_bottle",
-			"Bean Plant Fairy": "can_plant_bean and can_play(Song_of_Storms) and has_bottle"
+			"Bean Plant Fairy": "can_plant_bean and can_play(Song_of_Storms) and has_bottle",
+			"Showed Mido Sword & Shield": "open_forest == 'open' or (is_child and Kokiri_Sword and Buy_Deku_Shield)"
 		},
 		"exits": {
 			"Links House": "True",
@@ -133,7 +131,7 @@
 		"hint": "the Lost Woods",
 		"locations": {
 			"Odd Mushroom Access": "is_adult and Cojiro",
-			"Poachers Saw Access": "is_adult and Odd Potion Access",
+			"Poachers Saw Access": "is_adult and Odd_Potion",
 			"Skull Kid": "is_child and can_play(Sarias_Song)",
 			"Ocarina Memory Game": "is_child and Ocarina",
 			"Target in Woods": "can_use(Slingshot)",
@@ -256,10 +254,8 @@
 		"scene": "Lake Hylia",
 		"hint": "Lake Hylia",
 		"time_passes": true,
-		"events": {
-			"Bonooru": "is_child and Ocarina"
-		},
 		"locations": {
+			"Did Bonooru": "is_child and Ocarina",
 			"Pierre": "is_adult and Bonooru and not free_scarecrow",
 			"Underwater Bottle": "is_child and can_dive",
 			"Lake Hylia Sun": "d",
@@ -387,11 +383,9 @@
 		"region_name": "Gerudo Fortress",
 		"scene": "Gerudo Fortress",
 		"hint": "Gerudo's Fortress",
-		"events": {
-			"Carpenter Rescue": "can_finish_GerudoFortress",
-			"Gerudo Fortress Gate Open": "is_adult and Gerudo_Membership_Card"
-		},
 		"locations": {
+			"Gerudo Fortress Gate Opened": "is_adult and Gerudo_Membership_Card",
+			"Did Carpenter Rescue": "can_finish_GerudoFortress",
 			"Gerudo Fortress Rooftop Chest": "can_use(Hover_Boots) or can_use(Scarecrow) or can_use(Longshot)",
 			"Horseback Archery 1000 Points": "Gerudo_Membership_Card and can_ride_epona and Bow and at_day",
 			"Horseback Archery 1500 Points": "Gerudo_Membership_Card and can_ride_epona and Bow and at_day",
@@ -413,10 +407,8 @@
 	{
 		"region_name": "Gerudo Fortress Outside Gate",
 		"scene": "Gerudo Fortress",
-		"events": {
-			"Gerudo Fortress Gate Open": "is_adult and Gerudo_Membership_Card and (shuffle_gerudo_card or shuffle_overworld_entrances or shuffle_special_indoor_entrances)"
-		},
 		"exits": {
+			"Gerudo Fortress Gate Opened": "is_adult and Gerudo_Membership_Card and (shuffle_gerudo_card or shuffle_overworld_entrances or shuffle_special_indoor_entrances)",
 			"Gerudo Fortress": "is_adult or (shuffle_overworld_entrances and 'Gerudo Fortress Gate Open')",
 			"Haunted Wasteland Near Fortress": "True"
 		}
@@ -627,10 +619,8 @@
 	},
 	{
 		"region_name": "Castle Town Rupee Room",
-		"events": {
-			"Sell Big Poe": "is_adult and Bottle_with_Big_Poe"
-		},
 		"locations": {
+			"Sold Big Poe": "is_adult and Bottle_with_Big_Poe",
 			"10 Big Poes": "is_adult and (Big_Poe or (Bottle_with_Big_Poe, big_poe_count))",
 			"GS Castle Market Guard House": "is_child"
 		},
@@ -656,9 +646,9 @@
 	},
 	{
 		"region_name": "Castle Town Mask Shop",
-		"events": {
-			"Skull Mask": "at('Kakariko Village', is_child and Zeldas_Letter)",
-			"Mask of Truth": "'Skull Mask' and at('Lost Woods', is_child and can_play(Sarias_Song)) and at('Graveyard', is_child and at_day) and at('Hyrule Field', is_child and has_all_stones)"
+		"locations": {
+			"Sold Mask of Truth": "'Skull Mask' and at('Lost Woods', is_child and can_play(Sarias_Song)) and at('Graveyard', is_child and at_day) and at('Hyrule Field', is_child and has_all_stones)",
+			"Sold Skull Mask": "at('Kakariko Village', is_child and Zeldas_Letter)"
 		},
 		"exits": {
 			"Castle Town": "True"
@@ -858,11 +848,9 @@
 	},
 	{
 		"region_name": "Windmill",
-		"events": {
-			"Drain Well": "is_child and can_play(Song_of_Storms)"
-		},
 		"locations": {
-			"Windmill Freestanding PoH": "can_use(Boomerang) or (logic_windmill_poh and is_adult) or 'Dampes Windmill Access'",
+			"Drained Well": "is_child and can_play(Song_of_Storms)",
+			"Windmill Freestanding PoH": "is_adult or can_use(Boomerang)",
 			"Song at Windmill": "is_adult and Ocarina"
 		},
 		"exits": {
@@ -920,10 +908,8 @@
 	},
 	{
 		"region_name": "Odd Medicine Building",
-		"events": {
-			"Odd Potion Access": "is_adult and (Odd_Mushroom and disable_trade_revert)"
-		},
 		"exits": {
+			"Odd Potion Access": "is_adult and (Odd_Mushroom and disable_trade_revert)",
 			"Kakariko Village Backyard": "True"
 		}
 	},
@@ -980,9 +966,6 @@
 	},
 	{
 		"region_name": "Dampes Grave",
-		"events": {
-			"Dampes Windmill Access": "is_adult and can_play(Song_of_Time)"
-		},
 		"locations": {
 			"Hookshot Chest": "True",
 			"Dampe Race Freestanding PoH": "is_adult or logic_child_dampe_race_poh",
@@ -1082,12 +1065,10 @@
 		"region_name": "Goron City",
 		"scene": "Goron City",
 		"hint": "Goron City",
-		"events": {
+		"locations": {
 			"Goron City Child Fire": "is_child and can_use(Dins_Fire)",
 			"Goron City Woods Warp Open": "can_blast_or_smash or can_use(Dins_Fire) or can_use(Bow) or Progressive_Strength_Upgrade or 'Goron City Child Fire'",
 			"Stop Link the Goron": "is_adult and (Progressive_Strength_Upgrade or has_explosives or Bow or (logic_link_goron_dins and can_use(Dins_Fire)))"
-		},
-		"locations": {
 			"Goron City Leftmost Maze Chest": "can_use(Hammer) or can_use(Silver_Gauntlets) or (logic_goron_city_leftmost and has_explosives and can_use(Hover_Boots))",
 			"Goron City Left Maze Chest": "can_blast_or_smash or can_use(Silver_Gauntlets)",
 			"Goron City Right Maze Chest": "can_blast_or_smash or can_use(Silver_Gauntlets)",
@@ -1125,10 +1106,8 @@
 		"region_name": "Darunias Chamber",
 		"scene": "Goron City",
 		"hint": "Goron City",
-		"events": {
-			"Goron City Child Fire": "can_use(Sticks)"
-		},
 		"locations": {
+			"Goron City Child Fire": "can_use(Sticks)"
 			"Darunias Joy": "is_child and can_play(Sarias_Song)"
 		},
 		"exits": {

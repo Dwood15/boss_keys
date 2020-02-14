@@ -60,10 +60,8 @@
 	{
 		"region_name": "Forest Temple Falling Room",
 		"dungeon": "Forest Temple",
-		"events": {
-			"Forest Temple Amy and Meg": "can_use(Bow)"
-		},
 		"locations": {
+			"Beat Forest Temple Amy and Meg": "can_use(Bow)",
 			"Forest Temple Falling Room Chest": "True"
 		},
 		"exits": {
@@ -105,10 +103,8 @@
 	{
 		"region_name": "Forest Temple Bow Region",
 		"dungeon": "Forest Temple",
-		"events": {
-			"Forest Temple Jo and Beth": "can_use(Bow)"
-		},
 		"locations": {
+			"Beat Forest Temple Jo and Beth": "can_use(Bow)",
 			"Forest Temple Bow Chest": "True",
 			"Forest Temple Red Poe Chest": "can_use(Bow)",
 			"Forest Temple Blue Poe Chest": "can_use(Bow)"

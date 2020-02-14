@@ -1,14 +1,22 @@
 {
-	"Anju as Adult":       "Pocket Egg",
-	"Pocket Cucco Access": "Pocket Cucco",
-	"Wake Up Adult Talon": "Cojiro Access",
-	"Cojiro Access":       "Cojiro",
-	"Odd Mushroom Access": "Odd Mushroom",
-	"Prescription Access": "Prescription",
-	"Broken Sword Access": "Broken Sword",
-	"Poachers Saw Access": "Poachers Saw",
-	"Eyeball Frog Access": "Eyeball Frog",
-	"Eyedrops Access":     "Eyedrops",
-	"Claim Check Access":  "Claim Check",
-	"Biggoron":            "Biggoron Sword"
+	"Queen Gohma Heart": "Deku Tree Clear",
+	"Morpha Heart": "Water Temple Clear",
+	"Kokiri Forest": "Showed Mido Sword & Shield",
+
+	"Cleared Forest Trial": "Forest Trial Clear",
+	"Cleared Water Trial": "Water Trial Clear",
+	"Cleared Fire Trial": "Fire Trial Clear",
+	"Cleared Shadow Trial": "Shadow Trial Clear",
+	"Cleared Spirit Trial": "Spirit Trial Clear",
+	"Cleared Light Trial": "Light Trial Clear",
+
+	"Beat Forest Temple Jo and Beth": "Forest Temple Jo and Beth",
+	"Beat Forest Temple Amy and Meg": "Forest Temple Amy and Meg",
+	"Did Bonooru": "Bonooru",
+	"Did Carpenter Rescue": "Carpenter Rescue",
+	"Gerudo Fortress Gate Opened": "Gerudo Fortress Gate Open",
+	"Sold Big Poe": "Sell Big Poe",
+	"Sold Skull Mask": "Skull Mask",
+	"Sold Mask of Truth": "Mask of Truth",
+	"Drained Well": "Drain Well"
 }
