@@ -51,9 +51,7 @@
 		"hint": "Kokiri Forest",
 		"locations": {
 			"Deku Baba Sticks": "(is_adult and not shuffle_dungeon_entrances) or Kokiri_Sword or Boomerang",
-			"Deku Baba Nuts": "(is_adult and not shuffle_dungeon_entrances) or Slingshot or Sticks or has_explosives or Kokiri_Sword or can_use(Dins_Fire)",
-			"Deku Tree Gossip Stone (Left)": "True",
-			"Deku Tree Gossip Stone (Right)": "True"
+			"Deku Baba Nuts": "(is_adult and not shuffle_dungeon_entrances) or Slingshot or Sticks or has_explosives or Kokiri_Sword or can_use(Dins_Fire)"
 		},
 		"exits": {
 			"Deku Tree Lobby": "is_child or (shuffle_dungeon_entrances and 'Showed Mido Sword & Shield')",
@@ -181,9 +179,7 @@
 		"locations": {
 			"Song from Saria": "is_child and Zeldas_Letter",
 			"Sheik Forest Song": "is_adult",
-			"GS Sacred Forest Meadow": "can_use(Hookshot) and at_night",
-			"Sacred Forest Meadow Maze Gossip Stone (Lower)": "True",
-			"Sacred Forest Meadow Maze Gossip Stone (Upper)": "True"
+			"GS Sacred Forest Meadow": "can_use(Hookshot) and at_night"
 		},
 		"exits": {
 			"Sacred Forest Meadow Entryway": "True",
@@ -494,12 +490,6 @@
 		"region_name": "Temple of Time Exterior",
 		"scene": "Temple of Time Exterior",
 		"hint": "the Market",
-		"locations": {
-			"Temple of Time Gossip Stone (Left)": "True",
-			"Temple of Time Gossip Stone (Left-Center)": "True",
-			"Temple of Time Gossip Stone (Right)": "True",
-			"Temple of Time Gossip Stone (Right-Center)": "True"
-		},
 		"exits": {
 			"Castle Town": "True",
 			"Temple of Time": "True"

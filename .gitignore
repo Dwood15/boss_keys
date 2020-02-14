@@ -21,4 +21,5 @@ log.txt
 
 bosskeys
 tmp_oot_nodes.json
-./nodes.json
+/nodes.json
+/cows.json

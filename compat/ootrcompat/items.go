@@ -7,7 +7,7 @@ import (
 	"github.com/dwood15/bosskeys/bk"
 )
 
-var itemMaps = []string{"vanilla_location_items", "shop", "gs_tokens",  "scrubs", "dungeon"}
+var itemMaps = []string{"vanilla_location_items", "shop", "gs_tokens",  "scrubs", "dungeon", "event_based", "trade_quest", "drops"}
 
 func loadItems(wd string) OoTRItems {
 	itms := make(OotRLocations)

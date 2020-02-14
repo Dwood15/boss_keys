@@ -13,7 +13,6 @@ var regFiles = []string{"overworld", "deku_tree", "botw", "dd_cavern", "fire", "
 const ext = ".json"
 
 func loadRegions(wd string) (regs []*OotRregion) {
-
 	for _, v := range regFiles {
 		b, err := ioutil.ReadFile(wd + v + ext)
 		if err != nil {
@@ -33,12 +32,28 @@ func loadRegions(wd string) (regs []*OotRregion) {
 		regs = append(regs, rL...)
 	}
 
+	println("regions loaded, processing to lower snake and calculating cow locations")
+	var cows = make(map[bk.NodeName]string)
+
 	//Pre-Sanitizing
 	for _, r := range regs {
+		for k := range r.Locations {
+			if string(k) == "Impas House Near Cow" {
+				continue
+			}
+
+			if strings.Contains(string(k), "Cow") {
+				cows[k] = "Milk"
+			}
+		}
+
 		r.RegionName = toLowerSnake(r.RegionName)
 		r.Locations = mToLowerSnake(r.Locations)
 		r.Exits = mToLowerSnake(r.Exits)
 	}
+
+	cowBytes, _ := json.MarshalIndent(cows, "", "  ")
+	_ = ioutil.WriteFile("cows.json", cowBytes, 0644)
 
 	return
 }
