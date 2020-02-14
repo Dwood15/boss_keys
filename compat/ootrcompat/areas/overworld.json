@@ -6,7 +6,7 @@
 			"Links Pocket": "True"
 		},
 		"exits": {
-			"Root Exits": "is_starting_age or Time_Travel"
+			"Root Exits": "is_starting_age or time_travel"
 		}
 	},
 	{
@@ -1068,7 +1068,7 @@
 		"locations": {
 			"Goron City Child Fire": "is_child and can_use(Dins_Fire)",
 			"Goron City Woods Warp Open": "can_blast_or_smash or can_use(Dins_Fire) or can_use(Bow) or Progressive_Strength_Upgrade or 'Goron City Child Fire'",
-			"Stop Link the Goron": "is_adult and (Progressive_Strength_Upgrade or has_explosives or Bow or (logic_link_goron_dins and can_use(Dins_Fire)))"
+			"Stop Link the Goron": "is_adult and (Progressive_Strength_Upgrade or has_explosives or Bow or (logic_link_goron_dins and can_use(Dins_Fire)))",
 			"Goron City Leftmost Maze Chest": "can_use(Hammer) or can_use(Silver_Gauntlets) or (logic_goron_city_leftmost and has_explosives and can_use(Hover_Boots))",
 			"Goron City Left Maze Chest": "can_blast_or_smash or can_use(Silver_Gauntlets)",
 			"Goron City Right Maze Chest": "can_blast_or_smash or can_use(Silver_Gauntlets)",
@@ -1094,8 +1094,8 @@
 	{
 		"region_name": "Goron City Woods Warp",
 		"scene": "Goron City",
-		"events": {
-			"Goron City Woods Warp Open": "can_blast_or_smash or can_use(Dins_Fire)"
+		"locations": {
+			"Goron City Woods Warp Opened": "can_blast_or_smash or can_use(Dins_Fire)"
 		},
 		"exits": {
 			"Goron City": "can_leave_forest and 'Goron City Woods Warp Open'",
@@ -1107,7 +1107,7 @@
 		"scene": "Goron City",
 		"hint": "Goron City",
 		"locations": {
-			"Goron City Child Fire": "can_use(Sticks)"
+			"Goron City Child Fire": "can_use(Sticks)",
 			"Darunias Joy": "is_child and can_play(Sarias_Song)"
 		},
 		"exits": {
@@ -1379,11 +1379,9 @@
 		"region_name": "Lon Lon Ranch",
 		"scene": "Lon Lon Ranch",
 		"hint": "Lon Lon Ranch",
-		"events": {
-			"Epona": "can_play(Eponas_Song) and is_adult and at_day",
-			"Links Cow": "can_play(Eponas_Song) and is_adult and at_day"
-		},
 		"locations": {
+			"Links Cow": "epona and is_adult and at_day",
+			"Epona Get": "can_play(Eponas_Song) and is_adult and at_day",
 			"Song from Malon": "is_child and Zeldas_Letter and Ocarina and at_day",
 			"GS Lon Lon Ranch Tree": "is_child",
 			"GS Lon Lon Ranch Rain Shed": "is_child and at_night",
