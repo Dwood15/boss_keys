@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 
 	"github.com/alecthomas/jsonschema"
@@ -36,12 +37,16 @@ func reflectSchemas() {
 func main() {
 	println("Launching interactive terminal for building json")
 
-	//shouldn't be necessary any more?
+	//Convert from the ootr logic files to the our new ones
 	ootrcompat.ConvertOOTR("compat/ootrcompat/")
 
-	//errs := bk.LoadAndValidateNodes("bk/base_pools/oot/")
-	//
-	//for _, err := range errs {
-	//	println(err.Error())
-	//}
+
+	println("everything converted, check")
+	_, _ = fmt.Scanln()
+
+	errs := bk.LoadAndValidateNodes("bk/base_pools/oot/")
+
+	for _, err := range errs {
+		println(err.Error())
+	}
 }

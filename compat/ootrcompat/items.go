@@ -7,7 +7,7 @@ import (
 	"github.com/dwood15/bosskeys/bk"
 )
 
-var itemMaps = []string{"vanilla_location_items", "shop", "gs_tokens", "dungeon_items"}
+var itemMaps = []string{"vanilla_location_items", "shop", "gs_tokens",  "scrubs", "dungeon"}
 
 func loadItems(wd string) OoTRItems {
 	itms := make(OotRLocations)
@@ -22,7 +22,7 @@ func loadItems(wd string) OoTRItems {
 		}
 
 		if err = json.Unmarshal(b, &tmp); err != nil {
-			panic(err)
+			panic(fName + " " + err.Error())
 		}
 
 		if len(tmp) == 0 {

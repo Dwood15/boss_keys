@@ -14,6 +14,7 @@ type OotRRequirement string
 type OotRLocations map[bk.NodeName]OotRRequirement
 type OotRregion struct {
 	RegionName string `json:"region_name"`
+	Dungeon    string `json:"dungeon"`
 	Scene      string `json:"scene,omitempty"`
 	Hint       string `json:"hint,omitempty"`
 	Locations  OotRLocations
@@ -87,6 +88,10 @@ func ConvertOOTR(wd string) {
 				n.Requires = _n.Requires
 			}
 
+			if n.Class == bk.Loopback {
+				n.Exits = nil
+			}
+
 			nL[_ni] = n
 		}
 	}
@@ -108,7 +113,7 @@ func ConvertOOTR(wd string) {
 		panic(err)
 	}
 
-	if err = ioutil.WriteFile("tmp_oot_nodes.json", b, 0644); err != nil {
+	if err = ioutil.WriteFile("nodes.json", b, 0644); err != nil {
 		panic(err)
 	}
 
@@ -131,12 +136,14 @@ func locationToNode(iBL OoTRItems, rnName, k bk.NodeName, req OotRRequirement, c
 		n.Requires = bk.KeyPhrase(req)
 	}
 
-	n.Exits = []bk.NodeName{rnName}
+	if c != bk.Loopback {
+		n.Exits = []bk.NodeName{rnName}
+	}
 
 	itmName, ok := iBL[k]
 	if ok {
 		n.OnVisit.Gives = []bk.KeyName{itmName}
-		n.OnVisit.SelfDestructs = c == bk.OneWayPortal
+		n.OnVisit.SelfDestructs = (c == bk.OneWayPortal || c == bk.Loopback)
 		delete(iBL, k)
 	} else {
 		n.OnVisit = nil
@@ -148,6 +155,7 @@ func locationToNode(iBL OoTRItems, rnName, k bk.NodeName, req OotRRequirement, c
 func (otr *OotRregion) ToNodeChunk(itemsByLoc OoTRItems) (nl []bk.Node) {
 	//A region is a node of class hub
 	var rNode bk.Node
+	rNode.MiniMapScene = otr.Scene
 	rNode.Name = bk.NodeName(otr.RegionName)
 	rNode.Class = bk.Hub
 
@@ -162,7 +170,7 @@ func (otr *OotRregion) ToNodeChunk(itemsByLoc OoTRItems) (nl []bk.Node) {
 	for k, v := range otr.Locations {
 		rNode.Exits = append(rNode.Exits, k)
 
-		n := locationToNode(itemsByLoc, rNode.Name, k, v, bk.OneWayPortal)
+		n := locationToNode(itemsByLoc, rNode.Name, k, v, bk.Loopback)
 		nl = append(nl, n)
 	}
 

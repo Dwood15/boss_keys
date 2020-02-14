@@ -29,9 +29,9 @@ func (kp KeyPhrase) ParseRequirements() {
 }
 
 const (
+	Loopback     NodeClass = "loopback"       // Blue Warps and Owl teleport
 	OneWayPortal NodeClass = "one_way_portal" // Blue Warps and Owl teleport
-	SingleGive   NodeClass = "single_give" // Chests, GS, freestanding items
-	Hub          NodeClass = "hub"         // Hubs may contain items and exits
+	Hub          NodeClass = "hub"            // Hubs may contain items and exits
 	Special      NodeClass = "special"
 	Interior     NodeClass = "interior" // An interior has one exit. May contain multiple items
 
@@ -48,11 +48,12 @@ type (
 
 	NodeList []Node
 	Node     struct {
-		Name     NodeName  `json:"name,omitempty"` // Name is the human-readable identifier of the particular Node.
-		Comment  string    `json:"comments,omitempty"`
-		Class    NodeClass `json:"class,omitempty"`    // Class is a descriptor of the node
-		Requires KeyPhrase `json:"requires,omitempty"` // Names of the Items/Flags that are required in order to visit this node.
-		OnVisit  *OnVisit  `json:"on_visit,omitempty"`
+		Name         NodeName  `json:"name,omitempty"` // Name is the human-readable identifier of the particular Node.
+		Comment      string    `json:"comments,omitempty"`
+		MiniMapScene string    `json:"mini_map_scene,omitempty"`
+		Class        NodeClass `json:"class,omitempty"`    // Class is a descriptor of the node
+		Requires     KeyPhrase `json:"requires,omitempty"` // Names of the Items/Flags that are required in order to visit this node.
+		OnVisit      *OnVisit  `json:"on_visit,omitempty"`
 
 		Exits []NodeName `json:"exits,omitempty"`
 	}
@@ -79,7 +80,7 @@ func NewNode() Node {
 }
 
 //Validation helpers
-var AllNodeClasses = NodeClasses{OneWayPortal, SingleGive, Hub, Interior, Special}
+var AllNodeClasses = NodeClasses{OneWayPortal, Loopback, Hub, Interior, Special}
 var AllKeyActions = KeyActions{OnUseDecrement, OnUseDoNothing, OnUseTeleport, ""}
 
 //Major helper funcs
@@ -198,7 +199,12 @@ func (n *Node) Validate() error {
 	//TODO: More validation of nodes for sanity checking
 
 	switch n.Class {
-	case SingleGive:
+	case Loopback:
+		if n.OnVisit == nil {
+			return fmt.Errorf("[%s] missing on_visit - all loopbacks require an on_visit entry", n.Name)
+		}
+
+
 		if len(n.OnVisit.Gives) != 1 {
 			return fmt.Errorf("[%s] doesn't have correct number of Gives for class: [%s]", n.Name, n.Class)
 		}

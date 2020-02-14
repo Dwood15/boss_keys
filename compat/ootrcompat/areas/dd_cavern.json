@@ -16,9 +16,7 @@
 			"GS Dodongo's Cavern East Side Room": "has_explosives or is_adult or Slingshot or Boomerang or Sticks or Kokiri_Sword",
 			"GS Dodongo's Cavern Scarecrow": "can_use(Scarecrow) or can_use(Longshot) or (logic_dc_scarecrow_gs and (is_adult or can_child_attack))",
 			"DC Deku Scrub Deku Sticks": "is_adult or Slingshot or Sticks or has_explosives or Kokiri_Sword",
-			"DC Deku Scrub Deku Shield": "True",
-			"Dodongos Cavern Gossip Stone": "True",
-			"Gossip Stone Fairy": "can_summon_gossip_fairy and has_bottle"
+			"DC Deku Scrub Deku Shield": "True"
 		},
 		"exits": {
 			"Dodongos Cavern Beginning": "True",
