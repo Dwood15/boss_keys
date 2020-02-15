@@ -55,8 +55,10 @@ func loadRegions(wd string) (regs []*OotRregion) {
 		r.Exits = mToLowerSnake(r.Exits)
 	}
 
-	cowBytes, _ := json.MarshalIndent(cows, "", "  ")
-	_ = ioutil.WriteFile("cows.json", cowBytes, 0644)
+	if calculateCows {
+		cowBytes, _ := json.MarshalIndent(cows, "", "  ")
+		_ = ioutil.WriteFile("cows.json", cowBytes, 0644)
+	}
 
 	return
 }

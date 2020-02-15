@@ -22,8 +22,10 @@ type (
 // is recognized, however others may be added in the future.
 func LoadBasePools(wd string) (kg Pools) {
 	//sorry windows users :P
-	kg.Items = LoadKeyPool(wd + "item_pool.json")
-	kg.Flags = LoadKeyPool(wd + "state_flags.json")
+	if len(wd) == 0 {
+		kg.Items = LoadKeyPool("bk/base_pools/oot/item_pool.json")
+		kg.Flags = LoadKeyPool("bk/base_pools/oot/state_flags.json")
+	}
 	//Just one ginormous json file -- rip.
 	kg.Nodes = LoadNodes(wd + "nodes.json")
 	kg.NodesByName = make(map[NodeName]*Node, len(kg.Nodes))

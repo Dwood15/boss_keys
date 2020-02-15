@@ -215,8 +215,8 @@
 		"hint": "Hyrule Field",
 		"time_passes": true,
 		"locations": {
-			"Ocarina of Time": "is_child and has_all_stones",
-			"Song from Ocarina of Time": "is_child and has_all_stones",
+			"Get Ocarina of Time": "is_child and has_all_stones",
+			"Get Song from Ocarina of Time": "is_child and has_all_stones",
 			"Big Poe Kill": "can_use(Bow) and can_ride_epona and has_bottle"
 		},
 		"exits": {
@@ -375,7 +375,7 @@
 			"Gerudo Fortress North F2 Carpenter": "(is_adult or Kokiri_Sword) and (Gerudo_Membership_Card or can_use(Bow) or can_use(Hookshot) or can_use(Hover_Boots) or logic_gerudo_kitchen)",
 			"Gerudo Fortress South F1 Carpenter": "is_adult or Kokiri_Sword",
 			"Gerudo Fortress South F2 Carpenter": "is_adult or Kokiri_Sword",
-			"Gerudo Fortress Membership Card": "can_finish_GerudoFortress",
+			"Get Gerudo Fortress Membership Card": "can_finish_GerudoFortress",
 			"GS Gerudo Fortress Archery Range": "can_use(Hookshot) and Gerudo_Membership_Card and at_night",
 			"GS Gerudo Fortress Top Floor": "is_adult and at_night and (Gerudo_Membership_Card or can_use(Bow) or can_use(Hookshot) or can_use(Hover_Boots) or logic_gerudo_kitchen)"
 		},
@@ -532,7 +532,7 @@
 		"hint": "Hyrule Castle",
 		"time_passes": true,
 		"locations": {
-			"Malon Egg": "True",
+			"Get Malon Egg": "True",
 			"GS Hyrule Castle Tree": "can_child_attack",
 			"Butterfly Fairy": "can_use(Sticks) and has_bottle",
 			"Bug Rock": "has_bottle"
@@ -707,7 +707,7 @@
 		"locations": {
 			"Kakariko Village Gate Open": "is_child and Zeldas_Letter",
 			"Anju as Adult": "is_adult and at_day",
-			"Cojiro Access": "is_adult and Wake_Up_Adult_Talon",
+			"Cojiro Access": "is_adult and 'Woke Up Talon As Adult'",
 			"Sheik in Kakariko": "is_adult and Forest_Medallion and Fire_Medallion and Water_Medallion",
 			"Anjus Chickens": "is_child and at_day",
 			"GS Kakariko House Under Construction": "is_child and at_night",
@@ -1259,7 +1259,7 @@
 			"Eyeball Frog Access": "is_adult and 'Zora Thawed' and (Eyedrops or Eyeball_Frog or Prescription)",
 			"Diving Minigame": "is_child",
 			"Zoras Domain Torch Run": "can_use(Sticks)",
-			"Deliver Ruto's Letter": "is_child and Bottle_with_Letter and zora_fountain != 'open'",
+			"Deliver Rutos Letter": "is_child and Bottle_with_Letter and zora_fountain != 'open'",
 			"King Zora Thawed": "is_adult and Blue_Fire",
 			"GS Zora's Domain Frozen Waterfall": "is_adult and at_night and (Progressive_Hookshot or Bow or Magic_Meter)",
 			"Fish Group": "is_child and has_bottle",
@@ -1331,8 +1331,8 @@
 		"scene": "Lon Lon Ranch",
 		"hint": "Lon Lon Ranch",
 		"locations": {
-			"Links Cow": "epona and is_adult and at_day",
 			"Epona Get": "can_play(Eponas_Song) and is_adult and at_day",
+			"Malon Hurdle Game": "is_adult and Epona and at_day",
 			"Song from Malon": "is_child and Zeldas_Letter and Ocarina and at_day",
 			"GS Lon Lon Ranch Tree": "is_child",
 			"GS Lon Lon Ranch Rain Shed": "is_child and at_night",
