@@ -705,7 +705,7 @@
 		"scene": "Kakariko Village",
 		"hint": "Kakariko Village",
 		"locations": {
-			"Kakariko Village Gate Open": "is_child and Zeldas_Letter",
+			"Kakariko Village Gate": "is_child and Zeldas_Letter",
 			"Anju as Adult": "is_adult and at_day",
 			"Cojiro Access": "is_adult and 'Woke Up Talon As Adult'",
 			"Sheik in Kakariko": "is_adult and Forest_Medallion and Fire_Medallion and Water_Medallion",
@@ -1030,9 +1030,9 @@
 		"scene": "Goron City",
 		"hint": "Goron City",
 		"locations": {
-			"Goron City Child Fire": "is_child and can_use(Dins_Fire)",
-			"Goron City Woods Warp Open": "can_blast_or_smash or can_use(Dins_Fire) or can_use(Bow) or Progressive_Strength_Upgrade or 'Goron City Child Fire'",
-			"Stop Link the Goron": "is_adult and (Progressive_Strength_Upgrade or has_explosives or Bow or (logic_link_goron_dins and can_use(Dins_Fire)))",
+			"Set Goron City Child Fire": "is_child and (can_use(Dins_Fire) or can_use(Sticks))",
+			"Goron City Woods Warp Opened": "can_blast_or_smash or can_use(Dins_Fire) or can_use(Bow) or Progressive_Strength_Upgrade or 'Goron City Child Fire'",
+			"Did Stop Link the Goron": "is_adult and (Progressive_Strength_Upgrade or has_explosives or Bow or (logic_link_goron_dins and can_use(Dins_Fire)))",
 			"Goron City Leftmost Maze Chest": "can_use(Hammer) or can_use(Silver_Gauntlets) or (logic_goron_city_leftmost and has_explosives and can_use(Hover_Boots))",
 			"Goron City Left Maze Chest": "can_blast_or_smash or can_use(Silver_Gauntlets)",
 			"Goron City Right Maze Chest": "can_blast_or_smash or can_use(Silver_Gauntlets)",
@@ -1068,7 +1068,6 @@
 		"scene": "Goron City",
 		"hint": "Goron City",
 		"locations": {
-			"Goron City Child Fire": "can_use(Sticks)",
 			"Darunias Joy": "is_child and can_play(Sarias_Song)"
 		},
 		"exits": {
