@@ -1,44 +1,2691 @@
 [
 	{
-		"name":     "documentation",
-		"type":     "documentation",
-		"comment":  "this should be considered a flat list of all items, and should translate to a list of all items-keys.",
-		"comment2": ""
+		"name": "rupees_(20)",
+		"type": "",
+		"use_condition": ""
 	},
 	{
-		"name":       "kokiri_sword",
-		"type":       "melee",
-		"conditions": [ "child" ],
-		"comment":    "deku shield is sold at the kokiri shop for 40 rupees"
+		"name": "buy_blue_fire_castle_town",
+		"type": "pinned"
 	},
 	{
-		"name":    "bomb_bag",
-		"type":    "explosives",
-		"comment": "there should be 3 bomb bags in the pool"
+		"name": "buy_blue_fire_kakariko",
+		"type": "shop",
+		"comment": "'pinned' items are those which are removed from the stack"
 	},
 	{
-		"name":       "bombchus",
-		"type":       "explosives",
-		"conditions": [ "bomb_bag" ],
-		"comment":    "using/picking up more bombchus requires having the bomb bag"
+		"name": "bombchus_(10)",
+		"type": "",
+		"use_condition": ""
 	},
 	{
-		"name":       "slingshot",
-		"type":       "ranged",
-		"conditions": [ "child" ]
+		"name": "progressive_scale",
+		"type": "",
+		"use_condition": ""
 	},
 	{
-		"name":    "deku_nuts",
-		"comment": "deku nuts are hecking OP, but don't factor into computing completionability"
+		"name": "bombs_(10)",
+		"type": "",
+		"use_condition": ""
 	},
 	{
-		"name":       "deku_sticks",
-		"conditions": [ "child" ],
-		"comment":    "deku sticks can be a stand-in for swords"
+		"name": "buy_fish",
+		"type": "",
+		"use_condition": ""
 	},
 	{
-		"name":       "deku_shield",
-		"conditions": [ "child" ],
-		"comment":    "deku shield is sold at the kokiri shop for 40 rupees"
+		"name": "heart_container",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "ocarina_of_time",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bugs",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_arrows_(30)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(gerudo_fortress",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "compass_(bottom_of_the_well)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bombchus_(10)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_red_potion_[30]",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "light_arrows",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "goron_tunic",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "fire_medallion",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(forest_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "farores_wind",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "map_(fire_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "ice_trap",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bomb_bag",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "forest_trial_clear",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "deku_nut_drop",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "scarecrow_song",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_arrows_(10)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_bombchu_(10)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "hammer",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "arrows_(10)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "hylian_shield",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(water_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(ganons_castle)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "recovery_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "cojiro",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bombchu_drop",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "water_temple_clear",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "deku_nut_capacity",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bombchus_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "map_(dodongos_cavern)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(200)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_green_potion",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "deku_stick_capacity",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "arrows_(30)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "mask_of_truth",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(shadow_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_arrows_(10)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_hylian_shield",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "map_(ice_cavern)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "deku_shield",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(50)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_goron_tunic",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_bombs_(5)_[35]",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_arrows_(30)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(50)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "compass_(shadow_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "stone_of_agony",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "compass_(jabu_jabus_belly)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "iron_boots",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "map_(water_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "milk",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_red_potion_[30]",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "deku_stick_drop",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_deku_nut_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "deku_shield",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "forest_temple_amy_and_meg",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "milk",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(gerudo_training_grounds)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "map_(deku_tree)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(fire_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bugs",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_deku_nut_(10)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "map_(forest_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "magic_bean_pack",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_deku_nut_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "progressive_strength_upgrade",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "hylian_shield",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_deku_stick_(1)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_deku_nut_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "progressive_hookshot",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(50)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_bombs_(20)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "compass_(deku_tree)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "arrows_(30)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bugs",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "goron_ruby",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "slingshot",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "sell_big_poe",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_arrows_(50)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "fire_arrows",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "double_defense",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "ice_trap",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_green_potion",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "deku_nut_capacity",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(gerudo_training_grounds)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "epona",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bottle_with_milk",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_arrows_(10)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "pocket_cucco",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_poe",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_fish",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "song_of_time",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_bombs_(5)_[25]",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "fish",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "boss_key_(shadow_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "heart_container",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "eyeball_frog",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_bombs_(30)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(fire_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_red_potion_[30]",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(50)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "deku_shield",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "dins_fire",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bow",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(spirit_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "poachers_saw",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "progressive_strength_upgrade",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "milk",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(20)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_green_potion",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "arrows_(30)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "skull_mask",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "recovery_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "claim_check",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "compass_(dodongos_cavern)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "progressive_scale",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "boss_key_(ganons_tower)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "kokiri_sword",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "odd_potion",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_deku_nut_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "magic_meter",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_bombchu_(20)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "zora_sapphire",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_arrows_(30)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "light_medallion",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "recovery_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bombs_(20)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_bombchu_(20)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "carpenter_rescue",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "deku_stick_capacity",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "requiem_of_spirit",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(50)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "deku_nuts_(10)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(shadow_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "stop_link_the_goron",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(water_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_bombs_(5)_[35]",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bombchus",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_arrows_(30)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "ice_trap",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "map_(spirit_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_bombchu_(20)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "ice_trap",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "links_cow",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "compass_(water_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "ice_arrows",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(20)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "progressive_hookshot",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "odd_mushroom",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_zora_tunic",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_bombs_(10)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bow",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "milk",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_deku_nut_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "water_medallion",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(gerudo_training_grounds)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(bottom_of_the_well)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bottle",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "recovery_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(shadow_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "forest_medallion",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "recovery_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_bombs_(5)_[35]",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "arrows_(30)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_red_potion_[40]",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_bombs_(5)_[35]",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "fish",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_arrows_(50)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "boss_key_(water_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(gerudo_fortress",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "weird_egg",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "map_(jabu_jabus_belly)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "progressive_strength_upgrade",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_green_potion",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "progressive_wallet",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "heart_container",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "broken_sword",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "milk",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "progressive_wallet",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "light_trial_clear",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "shadow_medallion",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(spirit_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bombchus_(20)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "suns_song",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "zeldas_lullaby",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "fairy",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_red_potion_[30]",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(water_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "minuet_of_forest",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "sarias_song",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "heart_container",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "boss_key_(spirit_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_deku_seeds_(30)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "arrows_(10)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bonooru",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_bombs_(5)_[35]",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(gerudo_training_grounds)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_bombchu_(20)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_red_potion_[30]",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "arrows_(30)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_deku_shield",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "compass_(forest_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_deku_nut_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_fairy's_spirit",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "deliver_letter",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(fire_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bolero_of_fire",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_deku_nut_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(20)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "spirit_medallion",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "eyedrops",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "water_trial_clear",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(shadow_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_bombs_(5)_[35]",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_arrows_(30)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(forest_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "arrows_(30)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_bombs_(5)_[35]",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "goron_city_child_fire",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "boss_key_(forest_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "kakariko_village_gate_open",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "milk",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(200)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "compass_(fire_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_deku_nut_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "deku_nut_drop",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_deku_nut_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_deku_seeds_(30)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(water_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_bombs_(5)_[35]",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_deku_nut_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "kokiri_emerald",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_deku_nut_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart_(treasure_chest_game)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupee_(1)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "compass_(ice_cavern)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "showed_mido_sword_\u0026_shield",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bombs_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "fairy",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bombs_(20)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(200)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_arrows_(10)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "magic_meter",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "deku_nuts_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(gerudo_training_grounds)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "fairy",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(spirit_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "map_(bottom_of_the_well)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_bottle_bug",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "pocket_egg",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "boss_key_(fire_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "nocturne_of_shadow",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "recovery_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "milk",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(bottom_of_the_well)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bombs_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(50)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "arrows_(10)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_fairy's_spirit",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "ice_trap",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_green_potion",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_deku_stick_(1)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "fairy",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "arrows_(10)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(200)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "recovery_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "fairy",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "deku_nut_drop",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "recovery_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gerudo_fortress_membership_card",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "recovery_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "drain_well",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "heart_container",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "serenade_of_water",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(200)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_bombchu_(10)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(gerudo_training_grounds)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_arrows_(30)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bottle_with_letter",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(fire_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "biggoron_sword",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "arrows_(10)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(forest_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(water_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_arrows_(30)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_fish",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "arrows_(10)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_green_potion",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "slingshot",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "ice_trap",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_bombchu_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_hylian_shield",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "deku_shield",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_arrows_(30)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "deku_tree_clear",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bombchus_(10)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "recovery_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(20)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "fire_trial_clear",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "slingshot",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(50)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "song_of_storms",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "big_poe",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(forest_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "goron_city_woods_warp_open",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "blue_fire",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(fire_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "ocarina",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(fire_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "milk",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "prescription",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "recovery_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(fire_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(gerudo_fortress",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "woke_up_talon_as_adult",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(ganons_castle)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "triforce",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_red_potion_[30]",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "shadow_trial_clear",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "zeldas_letter",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "boomerang",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "nayrus_love",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_deku_nut_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "forest_temple_jo_and_beth",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "heart_container",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "hover_boots",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "eponas_song",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(20)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(gerudo_training_grounds)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(gerudo_training_grounds)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_red_potion_[30]",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bomb_bag",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "zora_tunic",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_green_potion",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "lens_of_truth",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bomb_bag",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(spirit_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(spirit_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(gerudo_training_grounds)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "prelude_of_light",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "spirit_trial_clear",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "mirror_shield",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_deku_shield",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_deku_stick_(1)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_deku_nut_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(forest_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_arrows_(30)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(gerudo_fortress",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(shadow_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_bottle_bug",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gerudo_fortress_gate_open",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_red_potion_[50]",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(fire_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bow",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "arrows_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(200)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_deku_stick_(1)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bombs_(10)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "bottle",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "time_travel",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_poe",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "deku_stick_drop",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "milk",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(bottom_of_the_well)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "map_(shadow_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_deku_stick_(1)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_arrows_(50)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "small_key_(water_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "rupees_(5)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_arrows_(30)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "compass_(spirit_temple)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "piece_of_heart",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "buy_bombchu_(10)",
+		"type": "",
+		"use_condition": ""
+	},
+	{
+		"name": "gold_skulltula_token",
+		"type": "",
+		"use_condition": ""
 	}
 ]

@@ -45,7 +45,7 @@ func main() {
 	_, _ = fmt.Scanln()
 
 	//"bk/base_pools/oot/"
-	errs := bk.LoadAndValidateNodes("")
+	_, errs := bk.LoadAndValidateNodes("")
 
 	for _, err := range errs {
 		println(err.Error())

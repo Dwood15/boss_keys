@@ -32,7 +32,6 @@ func loadItems(wd string) OoTRItems {
 		for k, v := range tmp {
 			itms[bk.NodeName(toLowerSnake(k))] = OotRRequirement(toLowerSnake(v))
 		}
-
 	}
 
 	newItms := make(OoTRItems)

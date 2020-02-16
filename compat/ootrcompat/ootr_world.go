@@ -21,8 +21,37 @@ type OotRregion struct {
 	Exits      OotRLocations
 }
 
+//DumpItems is the utility for taking nodes and dumping them to file
+func DumpItems(nL OoTRItems) () {
+	var i []bk.Key
+	for _, itm := range nL {
+		i = append(i, bk.Key{
+			Name: itm,
+		})
+	}
+
+	j, err := json.MarshalIndent(i, "", "  ")
+	if err != nil {
+		println("trying to marshall the items for json failed")
+		panic(err)
+	}
+
+	//I don't know about that file Perm but eh
+	err = ioutil.WriteFile("item_pool.json", j, 0644)
+	if err != nil {
+		println("file write: item_pool.json")
+		panic(err)
+	}
+
+	println("items have been dumped")
+
+	return
+}
+
 func ConvertOOTR(wd string) {
 	itms := loadItems(wd + "items/")
+
+	DumpItems(itms)
 
 	ogItmCt := len(itms)
 	println("loaded: [", ogItmCt, "] itms loaded")
@@ -80,7 +109,6 @@ func ConvertOOTR(wd string) {
 						n.Exits = append(n.Exits, _nE)
 					}
 				}
-
 			}
 
 		checkReq:
