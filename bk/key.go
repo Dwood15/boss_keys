@@ -10,6 +10,11 @@ type (
 
 	KeyPhrase string //KeyPhrase is a temporary typename used to indicate a conditional string which requires a parser to pluck conditional logic from
 
+	ItemDistributionSetting struct {
+		SlotType string `json:"slot_type,omitempty"`
+
+	}
+
 	// Key represents game state, or player save file state. Anything that can be used to indicate progression, really.
 	Key struct {
 		Name      KeyName      `json:"name"`             // Name is the human-readable ID of this key.
@@ -18,16 +23,15 @@ type (
 		Condition KeyCondition `json:"use_condition"`    // Condition is a parseable representation of requirements FOR USING an item or flag
 
 		//TODO: Add Ability to represent item USAGE, kappa
+		Settings *ItemDistributionSetting `json:"settings,omitempty"`
 	}
 )
-
 
 //ParseRequirements should implement the recursive-descent scanner.
 //It should return a KeyNodeList, a tree of items which reflect something similar to lisp syntax for conditionals
 func (kp KeyPhrase) ParseRequirements() {
 	panic("not yet implemented")
 }
-
 
 //Basic sanity checks
 func (k *Key) Validate() error {

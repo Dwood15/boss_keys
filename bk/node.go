@@ -16,8 +16,6 @@ const (
 	Loopback     NodeClass = "loopback"       // Blue Warps and Owl teleport
 	OneWayPortal NodeClass = "one_way_portal" // Blue Warps and Owl teleport
 	Hub          NodeClass = "hub"            // Hubs may contain items and exits
-	Special      NodeClass = "special"
-	Interior     NodeClass = "interior" // An interior has one exit. May contain multiple items
 )
 
 type (
@@ -33,14 +31,17 @@ type (
 
 	NodeList []Node
 	Node     struct {
-		Name         NodeName   `json:"name,omitempty"` // Name is the human-readable identifier of the particular Node.
-		Comment      string     `json:"comments,omitempty"`
-		MiniMapScene string     `json:"mini_map_scene,omitempty"`
-		Class        NodeClass  `json:"class,omitempty"`    // Class is a descriptor of the node
-		Requires     KeyPhrase  `json:"requires,omitempty"` // Names of the Items/Flags that are required in order to visit this node.
-		OnVisit      *OnVisit   `json:"on_visit,omitempty"`
-		Exits        []NodeName `json:"exits,omitempty"`
-		index        int        //index is where it is in the NodeList array//pool
+		Name         NodeName             `json:"name,omitempty"` // Name is the human-readable identifier of the particular Node.
+		Comment      string               `json:"comments,omitempty"`
+		MiniMapScene string               `json:"mini_map_scene,omitempty"`
+		Class        NodeClass            `json:"class,omitempty"`    // Class is a descriptor of the node
+		Requires     KeyPhrase            `json:"requires,omitempty"` // Names of the Items/Flags that are required in order to visit this node.
+		OnVisit      *OnVisit             `json:"on_visit,omitempty"`
+		Exits        []NodeName           `json:"exits,omitempty"`
+		Settings     DistributionSettings `json:"settings,omitempty"`
+
+		destructed bool
+		index      int //index is where it is in the NodeList array//pool
 	}
 )
 
@@ -52,12 +53,12 @@ func NewNode() Node {
 }
 
 //Validation helpers
-var AllNodeClasses = NodeClasses{OneWayPortal, Loopback, Hub, Interior, Special}
+var AllNodeClasses = NodeClasses{OneWayPortal, Loopback, Hub}
 
 //Major helper funcs
 
 //CanVisit indicates whether or not we are able to access the next node and therefore claim a given item
-func (n *Node) CanVisit(from NodeName, keysHeld map[KeyName]Key) bool {
+func (n *Node) CanVisit(from *Node, keysHeld map[KeyName]Key) bool {
 
 	//Sanity checks. We panic because Programmer error means the local node is empty or missing things
 	if n == nil {
@@ -70,10 +71,11 @@ func (n *Node) CanVisit(from NodeName, keysHeld map[KeyName]Key) bool {
 
 	//keysHeld check assumes that during testing, the algo has at least one key.
 	if len(keysHeld) == 0 {
-		panic("keys Held should not be empty!")
+		println("rejecting visit to node: " + n.Name)
+		return false
 	}
 
-	if len(from) == 0 {
+	if len(from.Name) == 0 {
 		panic("'from' node should never be emptystring")
 	}
 
@@ -122,6 +124,10 @@ func (n *Node) Validate() error {
 		if len(n.OnVisit.Gives) != 1 {
 			return fmt.Errorf("[%s] doesn't have correct number of Gives for class: [%s]", n.Name, n.Class)
 		}
+
+		if len(n.Exits) > 0 {
+			return fmt.Errorf("[%s] cannot have exits, and yet it still has some: [%v]", n.Name, n.Exits)
+		}
 	case Hub:
 		if len(n.Exits) == 0 {
 			return fmt.Errorf("[%s] doesn't have any Exits for class: [%s]", n.Name, n.Class)
@@ -130,7 +136,16 @@ func (n *Node) Validate() error {
 		if len(n.Exits) != 1 {
 			return fmt.Errorf("[%s] doesn't have correct number of Exits for class of: [%s]", n.Name, n.Class)
 		}
+	default:
+		return fmt.Errorf("[%s] has an unrecognized class: [%s]", n.Name, n.Class)
 	}
+
+	if n.OnVisit != nil && n.OnVisit.SelfDestructs {
+		if len(n.Exits) > 1 {
+			return fmt.Errorf("[%s] has too many exits for a self-destructing node. [%s]", n.Name, n.Exits)
+		}
+	}
+
 
 	return nil
 }

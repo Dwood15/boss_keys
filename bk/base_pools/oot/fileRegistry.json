@@ -1,0 +1,15 @@
+{
+	"game": "oot",
+	"description": "This registry is a list of file names which are used to help the randomizer find everything it needs",
+	"nodes": {
+		"description": "A Node is a point on an abstract graph, representing a particular location.",
+		"files": [ "nodes" ]
+	},
+	"keys": {
+		"description": "A Key is a flag which gets added to the state. Usually represents unlocks or items that are distributed.",
+		"files": [ "item_pool" ]
+	},
+	"flags": {
+		"description": "A Flag is a Key, but may contain or require additional, more complext logic, or provide macros for 'keys' to use."
+	}
+}

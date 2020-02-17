@@ -29,14 +29,13 @@
 		"use_condition": ""
 	},
 	{
-		"name": "buy_fish",
-		"type": "",
+		"name": "buy_fish_kakariko_potion_shop",
+		"type": "shop",
 		"use_condition": ""
 	},
 	{
 		"name": "heart_container",
-		"type": "",
-		"use_condition": ""
+		"type": "health",
 	},
 	{
 		"name": "ocarina_of_time",
@@ -654,8 +653,8 @@
 		"use_condition": ""
 	},
 	{
-		"name": "buy_fish",
-		"type": "",
+		"name": "buy_fish_castle_town_potion_shop",
+		"type": "shop",
 		"use_condition": ""
 	},
 	{
@@ -1844,7 +1843,7 @@
 		"use_condition": ""
 	},
 	{
-		"name": "buy_bottle_bug",
+		"name": "kakariko_buy_bottle_bug",
 		"type": "",
 		"use_condition": ""
 	},
@@ -2099,8 +2098,8 @@
 		"use_condition": ""
 	},
 	{
-		"name": "buy_fish",
-		"type": "",
+		"name": "buy_fish_zora_shop",
+		"type": "shop",
 		"use_condition": ""
 	},
 	{
